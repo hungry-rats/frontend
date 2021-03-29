@@ -1,10 +1,21 @@
 
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css'
+
+import { Container, Row, Col, Button, Alert, Breadcrumb, Card, Form } from 'react-bootstrap'
+
 
 export default function LandingCarousel() {
 	return <div></div>;
   
-// via: https://dev.to/willamesoares/how-to-build-an-image-carousel-with-react--24na#:~:text=So%2C%20let's%20set%20up%20the,()%20%7B...%7D%20%7D
 
+// Need to add this to my HTML
+
+// <div id="container">
+//   <!-- Your component will be rendered here. -->
+// </div>
+
+
+const [current, setCurrent] = React.useState(0)
 
 }
