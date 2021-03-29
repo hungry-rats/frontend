@@ -1,0 +1,48 @@
+.logoIcon{
+    background-color: cadetblue;
+    float: left;
+}
+
+.userButton {
+    float: right;
+}
+
+.spacer{
+    height:50px;
+}
+.welcomeBar{
+    background-color: cadetblue
+}
+.carouselGrid {
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr;
+    grid-template-rows: 2fr 2fr 2fr;
+    justify-items: center;
+}
+
+.carouselOne, .carouselTwo, .carouselThree, .carouselFour {
+    width: 180px;
+}
+.carouselThree, .carouselFour {
+margin-top: -100px;
+}
+
+.signUpForm{
+    height: 400px;
+    grid-column-start: 3;
+    grid-row-start: 2;
+    margin-top: -20px;
+   
+}
+
+div.jumbotron {
+    height: 350px;
+}
+
+.linkToFeed {
+    /* background-color: yellow; */
+    height: 80px;
+    grid-column-start: 3;
+    grid-row-start: 1;
+
+}
