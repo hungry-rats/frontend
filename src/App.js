@@ -1,25 +1,21 @@
-import logo from './logo.svg';
+import react from 'react';
 import './App.css';
+import { Route, Link } from 'react-router-dom';
+import { Row, Col, Container } from 'react-bootstrap';
+import LandingNavBar from './landing-page-components/LandingNavBar'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div className='App'>
+			
+        <Route 
+            path='/'
+            exact render={() => (
+              <LandingNavBar />
+            )}
+          />
+		</div>
+	);
 }
 
 export default App;
