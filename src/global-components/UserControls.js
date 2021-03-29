@@ -1,5 +1,5 @@
 import React from 'react';
 
-export default function LandingCarousel() {
+export default function UserControls() {
 	return <div></div>;
 }
