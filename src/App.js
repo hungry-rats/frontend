@@ -7,6 +7,7 @@ import LandingCarousel from './landing-page-components/LandingCarousel';
 import NavBar from './global-components/NavBar';
 import Home from './home-components/Home';
 import Details from './home-components/Details';
+import Login from './landing-page-components/Login';
 import { atom, useRecoilState, useRecoilValue } from "recoil"
 import { userState as userStateAtom } from './landing-page-components/LandingCarousel'
 
@@ -20,6 +21,8 @@ function App() {
 		return (
 			<div className='App'>
 				<Route path='/' exact render={() => <LandingCarousel />} />
+
+				<Route path='/Login' exact render={() => <Login />} />
 
 				<Route path='/home' exact render={() => <Home />} />
 				{/* <LandingCarousel/> */}
