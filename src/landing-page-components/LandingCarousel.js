@@ -1,67 +1,71 @@
 import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Button, Carousel, Form, Jumbotron } from "react-bootstrap";
+import { useHistory } from 'react-router-dom';
 import "./LandingCarousel.css";
+import axios from "axios";
 
 export default function LandingCarousel() {
 
 	//Establish State Here
-	// const [formData, setFormData] = useState({
-	// 	email: '',
-	// 	username: null,
-	// 	password: '',
-	// 	passwordConfirm:'',
-	// 	valid:''
-	// })
+	const history = useHistory()
+	const [formData, setFormData] = useState({
+		username: null,
+		email: null,
+		password: null
+	})
 
-	const [emailState, setEmailState] = useState()
-	const [usernameState, setUsernameState] = useState()
-	const [passwordState, setPasswordState] = useState()
+	// const [emailState, setEmailState] = useState()
+	// const [usernameState, setUsernameState] = useState()
+	// const [passwordState, setPasswordState] = useState()
 	const [passwordConfirmState, setPasswordConfirmState] = useState()
 
-
-
-
-	const [inputValue, setInputValue] = useState({
-
-	})
-	let passwordConfirm ='';
-	let password ='';
-	let username ='';
-	let email ='';
+	const [inputValue, setInputValue] = useState({})
 
 	//Declare Password Comparison Function Here
 	function comparePasswords(){
-		console.log(passwordConfirm.value)
-      	console.log(password.value)
-		if(passwordConfirmState.passwordConfirm === passwordState.password){
+
+		if(passwordConfirmState.passwordConfirm === formData.password){
 			alert("Passwords Match")} else alert("Passwords Do Not Match!")
+
+		axios.post(`http://localhost:8000/users`, formData)
+			.then(() => {
+				history.push('/')
+				console.log(history)
+			})
+			.catch(console.error)
 	}
+
 	//Handle Change Here
 	function handleChange(event){
-		
 		setInputValue({
 			inputValue: event.target.value
 		})
 
 	}
 	function handleUserName(event){
-		setUsernameState({
-			username: event.target.value
+		setFormData({
+			email: formData.email,
+			username: event.target.value,
+			password: formData.password
 		})
 		}
 	
 
 	function handleEmail(event){
-		setEmailState({
-			email: event.target.value
-		})
+		setFormData({
+			email: event.target.value,
+			username: formData.username,
+			password: formData.password
+		});
 	}
 
 	function handlePassword(event){
-		setPasswordState({
-			password: event.target.value
-		})
+		setFormData({
+			email: formData.email,
+			username: formData.username,
+			password: event.target.value,
+		});
 	}
 
 	function handlePasswordConfirm(event){
@@ -74,7 +78,7 @@ export default function LandingCarousel() {
 
 
 
-	console.log(username)
+	
 	
 	//Handle Submit Here
 	function handleSubmit(event){
@@ -313,4 +317,3 @@ export default function LandingCarousel() {
 	</div>
   );
 }
-
