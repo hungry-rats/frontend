@@ -22,9 +22,10 @@ function App() {
 			<div className='App'>
 				<Route path='/' exact render={() => <LandingCarousel />} />
 
-				<Route path='/Login' exact render={() => <Login />} />
+				<Route path='/login' exact render={() => <Login />} />
 
 				<Route path='/home' exact render={() => <Home />} />
+
 				{/* <LandingCarousel/> */}
 				{/* <NavBar /> */}
 				{/* turnary will go here LOGED IN OR NOT */}
