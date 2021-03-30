@@ -4,6 +4,88 @@ import { Button, Carousel, Form, Jumbotron } from "react-bootstrap";
 import "./LandingCarousel.css";
 
 export default function LandingCarousel() {
+
+	//Establish State Here
+	// const [formData, setFormData] = useState({
+	// 	email: '',
+	// 	username: null,
+	// 	password: '',
+	// 	passwordConfirm:'',
+	// 	valid:''
+	// })
+
+	const [emailState, setEmailState] = useState()
+	const [usernameState, setUsernameState] = useState()
+	const [passwordState, setPasswordState] = useState()
+	const [passwordConfirmState, setPasswordConfirmState] = useState()
+
+
+
+
+	const [inputValue, setInputValue] = useState({
+
+	})
+	let passwordConfirm ='';
+	let password ='';
+	let username ='';
+	let email ='';
+
+	//Declare Password Comparison Function Here
+	function comparePasswords(){
+		console.log(passwordConfirm.value)
+      	console.log(password.value)
+		if(passwordConfirmState.passwordConfirm === passwordState.password){
+			alert("Passwords Match")} else alert("Passwords Do Not Match!")
+	}
+	//Handle Change Here
+	function handleChange(event){
+		
+		setInputValue({
+			inputValue: event.target.value
+		})
+
+	}
+	function handleUserName(event){
+		setUsernameState({
+			username: event.target.value
+		})
+		}
+	
+
+	function handleEmail(event){
+		setEmailState({
+			email: event.target.value
+		})
+	}
+
+	function handlePassword(event){
+		setPasswordState({
+			password: event.target.value
+		})
+	}
+
+	function handlePasswordConfirm(event){
+		setPasswordConfirmState({
+			passwordConfirm: event.target.value
+		})
+	}
+	
+
+
+
+
+	console.log(username)
+	
+	//Handle Submit Here
+	function handleSubmit(event){
+		event.preventDefault();
+		console.log(event.target);
+	}
+
+	// function onSubmit(event){
+
+	// }
+
   return (
 
 	<div className="container">
@@ -195,23 +277,40 @@ export default function LandingCarousel() {
 				<Button variant="info">Visit my Feed</Button>
 			</p>
 		</Jumbotron>
-		</div>
-	
+
 		<div className = "signUpForm">
 			<Form>
-				<Form.Group controlId="formGroupEmail">
+				<Form.Group controlId="email" required onChange={handleEmail} value={setInputValue} onSubmit={handleSubmit}>
 					<h2> Sign Up!</h2>
 					<Form.Label>Email address</Form.Label>
-					<Form.Control type="email" placeholder="Enter email" />
+					<Form.Control type="email" placeholder="Enter email"  />
 				</Form.Group>
-				<Form.Group controlId="formGroupPassword">
+
+				<Form.Group controlId="username" required onChange={handleUserName} value={setInputValue} onSubmit={handleSubmit}>
+					<Form.Label>Username</Form.Label>
+					<Form.Control type="password" placeholder="Username"  />
+				</Form.Group>
+
+				<Form.Group controlId="password" required onChange={handlePassword} value={setInputValue} onSubmit={handleSubmit}  >
 					<Form.Label>Password</Form.Label>
 					<Form.Control type="password" placeholder="Password" />
 				</Form.Group>
+				<Form.Group controlId="passwordConfirm" required onChange={handlePasswordConfirm} value={setInputValue} onSubmit={handleSubmit} >
+					<Form.Label>Confirm Password</Form.Label>
+					<Form.Control type="password" placeholder="Confirm Password" r/>
+				</Form.Group>
 			</Form>
+			<Button 
+				variant="info"
+				type="submit"
+				onClick={comparePasswords}>Submit</Button>
 		</div>
+		
+		</div>
+	
 
 		</div>
 	</div>
   );
 }
+
