@@ -70,11 +70,6 @@ export default function LandingCarousel() {
 		})
 	}
 	
-
-
-
-
-	console.log(username)
 	
 	//Handle Submit Here
 	function handleSubmit(event){
@@ -279,30 +274,33 @@ export default function LandingCarousel() {
 		</Jumbotron>
 
 		<div className = "signUpForm">
-			<Form>
-				<Form.Group controlId="email" required onChange={handleEmail} value={setInputValue} onSubmit={handleSubmit}>
 					<h2> Sign Up!</h2>
+			<Form>
+				<Form.Group controlId="email" className="emailFormField" required onChange={handleEmail} value={setInputValue} onSubmit={handleSubmit}>
 					<Form.Label>Email address</Form.Label>
 					<Form.Control type="email" placeholder="Enter email"  />
 				</Form.Group>
 
-				<Form.Group controlId="username" required onChange={handleUserName} value={setInputValue} onSubmit={handleSubmit}>
+				<Form.Group controlId="username" className="usernameFormField" required onChange={handleUserName} value={setInputValue} onSubmit={handleSubmit}>
 					<Form.Label>Username</Form.Label>
 					<Form.Control type="password" placeholder="Username"  />
 				</Form.Group>
-
-				<Form.Group controlId="password" required onChange={handlePassword} value={setInputValue} onSubmit={handleSubmit}  >
-					<Form.Label>Password</Form.Label>
-					<Form.Control type="password" placeholder="Password" />
-				</Form.Group>
-				<Form.Group controlId="passwordConfirm" required onChange={handlePasswordConfirm} value={setInputValue} onSubmit={handleSubmit} >
+			
+					<Form.Group controlId="password" className="passwordEntryFormField" required onChange={handlePassword} value={setInputValue} onSubmit={handleSubmit}  >
+						<Form.Label>Password</Form.Label>
+						<Form.Control type="password" placeholder="Password" />
+					</Form.Group>
+				<Form.Group controlId="passwordConfirm" className="passwordConfirmFormField" required onChange={handlePasswordConfirm} value={setInputValue} onSubmit={handleSubmit} >
 					<Form.Label>Confirm Password</Form.Label>
 					<Form.Control type="password" placeholder="Confirm Password" r/>
 				</Form.Group>
+				
+
 			</Form>
 			<Button 
 				variant="info"
 				type="submit"
+				className="submitFormButton"
 				onClick={comparePasswords}>Submit</Button>
 		</div>
 		
