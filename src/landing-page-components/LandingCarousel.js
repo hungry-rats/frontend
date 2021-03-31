@@ -381,7 +381,6 @@ export default function LandingCarousel() {
 					<Form.Label>Username</Form.Label>
 					<Form.Control type="password" placeholder="Username"  />
 				</Form.Group>
-			
 					<Form.Group controlId="password" className="passwordEntryFormField" required onChange={handlePassword} value={setInputValue} onSubmit={handleSubmit}  >
 						<Form.Label>Password</Form.Label>
 						<Form.Control type="password" placeholder="Password" />
