@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import NavBar from '../global-components/NavBar';
 const axios = require('axios').default;
 
 export default function Details({ match }) {
@@ -6,7 +7,7 @@ export default function Details({ match }) {
 	const id = match.params.id;
 	const [details, setDetails] = useState();
 
-	const url = `http://localhost:8000/seefood/${id}`;
+	const url = `http://localhost:8000/recipes/${id}`;
 	useEffect(() => {
 		axios
 			.get(url)
@@ -16,12 +17,15 @@ export default function Details({ match }) {
 			.catch(console.error);
 	}, []);
 
+	console.log(details);
+
 	useEffect(() => {}, [details]);
 
 	if (details) {
 		console.log(details);
 		return (
 			<div>
+				<NavBar />
 				<h1>{details.title}</h1>
 				<img src={details.image} alt={details.title} />
 				<h1>Directions</h1>

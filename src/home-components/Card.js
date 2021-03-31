@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 export default function Card({ item }) {
 	return (
 		<div>
-			<Link to={`${item._id}`}>
+			<Link to={`recipes/${item._id}`}>
 				<div className='card'>
 					<div className='card-title'>
 						<h3>{item.title}</h3>

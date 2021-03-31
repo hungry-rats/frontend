@@ -13,7 +13,6 @@ export default function Feed({ data }) {
 	} else {
 		return (
 			<div>
-				<h1> Success</h1>
 				{data.map((item) => {
 					console.log(item);
 					return (

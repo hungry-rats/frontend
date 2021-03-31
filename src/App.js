@@ -7,18 +7,40 @@ import LandingCarousel from './landing-page-components/LandingCarousel';
 import NavBar from './global-components/NavBar';
 import Home from './home-components/Home';
 import Details from './home-components/Details';
+import Login from './landing-page-components/Login';
+import { atom, useRecoilState, useRecoilValue } from 'recoil';
+import { userState as userStateAtom } from './landing-page-components/LandingCarousel';
 
 function App() {
-	return (
-		<div className='App'>
-			<Route path='/' exact render={() => <LandingCarousel />} />
-			{/* <LandingCarousel/> */}
-			{/* <NavBar /> */}
-			{/* turnary will go here LOGED IN OR NOT */}
-			<Route path='/home' exact render={() => <Home />} />
-			<Route path='/:id' exact component={Details} />
-		</div>
-	);
+	const [user, setUser] = useRecoilState(userStateAtom);
+
+	console.log(user);
+
+	if (user === false) {
+		return (
+			<div className='App'>
+				<Route path='/' exact render={() => <LandingCarousel />} />
+
+				<Route path='/login' exact render={() => <Login />} />
+
+				<Route path='/home' exact render={() => <Home />} />
+
+				<Route path='/recipes/:id' exact component={Details} />
+
+				{/* <LandingCarousel/> */}
+				{/* <NavBar /> */}
+				{/* turnary will go here LOGED IN OR NOT */}
+			</div>
+		);
+	} else {
+		return (
+			<div>
+				<NavBar />
+				<Route path='/' exact render={() => <Home />} />
+				<Route path='/recipes/:id' exact component={Details} />
+			</div>
+		);
+	}
 }
 
 export default App;
