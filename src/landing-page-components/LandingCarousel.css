@@ -5,38 +5,70 @@
 
 .userButton {
     float: right;
+    background-color: cadetblue;
 }
 
 .spacer{
     height:50px;
 }
 .welcomeBar{
-    background-color: cadetblue
+    background-color: cadetblue;
+    color:white;
 }
 .carouselGrid {
     display: grid;
-    grid-template-columns: 2fr 2fr 2fr;
-    grid-template-rows: 2fr 2fr 2fr;
+    grid-template-columns: 1fr 1fr 2fr;
+    grid-template-rows: 1fr 1fr 1fr;
     justify-items: center;
+    padding: -20px;
 }
 
 .carouselOne, .carouselTwo, .carouselThree, .carouselFour {
-    width: 180px;
+    width: 180px
 }
 .carouselThree, .carouselFour {
-margin-top: -100px;
+margin-top: 20px;
+height: 200px;
 }
 
 .signUpForm{
-    height: 400px;
+    height: 420px;
     grid-column-start: 3;
     grid-row-start: 2;
     margin-top: -20px;
-   
 }
 
-div.jumbotron {
-    height: 350px;
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2fr 2fr;
+}
+
+.emailFormField, .usernameFormField {
+    grid-column-start: 1;
+    
+}
+.passwordEntryFormField {
+    padding-left: 10px;
+    grid-row-start: 1;
+    grid-column-start: 2;
+}
+
+ .passwordConfirmFormField{
+    padding-left: 10px;
+    grid-row-start: 2;
+    grid-column-start: 2;
+}
+
+.submitFormButton{
+    grid-row-start: 2;
+    grid-column-start: 2;
+}
+
+.jumbotron {
+    height: 200px;
+    padding-top: 20px;
+    padding-bottom: 0px;
 }
 
 .linkToFeed {
@@ -44,5 +76,4 @@ div.jumbotron {
     height: 80px;
     grid-column-start: 3;
     grid-row-start: 1;
-
 }
