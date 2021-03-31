@@ -8,14 +8,13 @@ import NavBar from './global-components/NavBar';
 import Home from './home-components/Home';
 import Details from './home-components/Details';
 import Login from './landing-page-components/Login';
-import { atom, useRecoilState, useRecoilValue } from "recoil"
-import { userState as userStateAtom } from './landing-page-components/LandingCarousel'
+import { atom, useRecoilState, useRecoilValue } from 'recoil';
+import { userState as userStateAtom } from './landing-page-components/LandingCarousel';
 
 function App() {
+	const [user, setUser] = useRecoilState(userStateAtom);
 
-	const [user, setUser] = useRecoilState(userStateAtom)
-
-	console.log(user)
+	console.log(user);
 
 	if (user === false) {
 		return (
@@ -26,6 +25,8 @@ function App() {
 
 				<Route path='/home' exact render={() => <Home />} />
 
+				<Route path='/recipes/:id' exact component={Details} />
+
 				{/* <LandingCarousel/> */}
 				{/* <NavBar /> */}
 				{/* turnary will go here LOGED IN OR NOT */}
@@ -34,8 +35,9 @@ function App() {
 	} else {
 		return (
 			<div>
+				<NavBar />
 				<Route path='/' exact render={() => <Home />} />
-				<Route path='/:id' exact component={Details} />
+				<Route path='/recipes/:id' exact component={Details} />
 			</div>
 		);
 	}
