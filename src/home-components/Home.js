@@ -7,7 +7,7 @@ const axios = require('axios').default;
 export default function Home() {
 	const [data, setData] = useState();
 
-	const url = `http://localhost:8000/seefood/`;
+	const url = `http://localhost:8000/recipes/`;
 	useEffect(() => {
 		axios
 			.get(url)
