@@ -28,17 +28,7 @@ export default function Details({ match }) {
 				<NavBar />
 				<h1>{details.title}</h1>
 				<img src={details.image} alt={details.title} />
-				<h1>Directions</h1>
-				<ul>
-					{details.information[0].directions.map((step, index) => {
-						return (
-							<li>
-								{index}. {step}
-							</li>
-						);
-					})}
-				</ul>
-				<br></br>
+
 				<h1>Ingredients</h1>
 				<ul>
 					{details.information[0].ingredients.map((step, index) => {
@@ -49,6 +39,20 @@ export default function Details({ match }) {
 						);
 					})}
 				</ul>
+
+				<h1>Directions</h1>
+				<ul>
+					{details.information[0].directions.map((step, index) => {
+						return (
+							<li>
+								{index}. {step}
+							</li>
+						);
+					})}
+				</ul>
+
+				<br></br>
+				
 			</div>
 		);
 	} else {

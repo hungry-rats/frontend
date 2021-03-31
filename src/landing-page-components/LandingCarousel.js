@@ -37,7 +37,7 @@ export default function LandingCarousel() {
 		if(passwordConfirmState.passwordConfirm === formData.password){
 			alert("Passwords Match")} else alert("Passwords Do Not Match!")
 
-		axios.post(`http://localhost:8000/users`, formData)
+		axios.post(`http://localhost:8000/users/create`, formData)
 			.then(() => {
 				history.push('/')
 				console.log(history)
