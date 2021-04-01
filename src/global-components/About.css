@@ -1,0 +1,27 @@
+/* Photo Credit: https://unsplash.com/photos/uQs1802D0CQ */
+.qAndAGrid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.questions{
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 1;
+}
+
+.answers{
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 2;
+}
+
+
+
+img {
+    width:300px;
+    grid-row-start: 3;
+    grid-column-start: 3;
+    border-radius: 20px;
+    }
