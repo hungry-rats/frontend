@@ -25,11 +25,16 @@ export default function Home() {
 
 	useEffect(() => {
 		if (search !== null && search !== undefined && search !== '') {
-			setData(
-				data.filter((item) =>
-					item.title.toLowerCase().includes(search.toLowerCase())
+			axios
+				.get(url)
+				.then((res) =>
+					setData(
+						res.data.filter((item) =>
+							item.title.toLowerCase().includes(search.toLowerCase())
+						)
+					)
 				)
-			);
+				.catch(console.error);
 		} else {
 			axios
 				.get(url)
