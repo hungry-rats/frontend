@@ -108,7 +108,7 @@ export default function LandingCarousel() {
 			</Button>
 			<div className='spacer'></div>
 			<div className='welcomeBar'>
-				<h1>Welcome to Tasty</h1>
+				<h1>Seefood</h1>
 			</div>
 			<div className='carouselGrid'>
 				<div className='carouselOne'>
@@ -322,7 +322,7 @@ export default function LandingCarousel() {
 								onChange={handleUserName}
 								value={setInputValue}
 								onSubmit={handleSubmit}>
-								<Form.Label>Username</Form.Label>
+								<Form.Label className="userNameLabel">Username</Form.Label>
 								<Form.Control type='password' placeholder='Username' />
 							</Form.Group>
 

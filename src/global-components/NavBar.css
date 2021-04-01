@@ -1,0 +1,22 @@
+.Nav{
+    background: grey;
+    /* height: 6vh; */
+    /* margin-top: 0px; */
+}
+
+
+
+.homeLink {
+   font-size: 30px;
+}
+
+
+
+/* Via: https://travis.media/how-to-make-an-item-grow-on-hover-with-css/ */
+.grow { 
+    transition: all .2s ease-in-out; 
+    }
+    
+.grow:hover { 
+    transform: scale(1.1); 
+    }
