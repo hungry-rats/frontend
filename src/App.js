@@ -10,6 +10,9 @@ import Details from './home-components/Details';
 import Login from './landing-page-components/Login';
 import { atom, useRecoilState, useRecoilValue } from 'recoil';
 import { userState as userStateAtom } from './landing-page-components/LandingCarousel';
+import About from './global-components/About';
+import Contact from './global-components/Contact';
+
 
 function App() {
 	const [user, setUser] = useRecoilState(userStateAtom);
@@ -27,6 +30,11 @@ function App() {
 
 				<Route path='/recipes/:id' exact component={Details} />
 
+				<Route path='/about' exact component={About} />
+
+				<Route path='/contact' exact component={Contact} />
+
+
 				{/* <LandingCarousel/> */}
 				{/* <NavBar /> */}
 				{/* turnary will go here LOGED IN OR NOT */}
@@ -38,6 +46,8 @@ function App() {
 				<NavBar />
 				<Route path='/' exact render={() => <Home />} />
 				<Route path='/recipes/:id' exact component={Details} />
+				{/* <Route path='/about' exact component={About} /> */}
+
 			</div>
 		);
 	}

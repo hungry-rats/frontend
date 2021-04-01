@@ -24,6 +24,7 @@
 
 li {
     list-style-type: none;
+    
 }
 
 .informationBody {
@@ -33,14 +34,15 @@ li {
 }
 
 .ingredientList{
-    margin-right:-100px;
+    margin-right:-180px;
 }
 
 .directionList {
     /* background: cadetblue; */
     text-align: left;
     /* white-space: pre-wrap; */
-;
+    max-width: 80%;
+
 }
 
 .directionListItem{
@@ -61,19 +63,21 @@ li {
 
     .commentContainer{
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr;
+        grid-template-columns: .5fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
         align-items: center;
-        width: 600px;
+        width: 80%;
         /* justify-items: center; */
         /* grid-gap: */
+        justify-items: center;
     }
  
-    input {
-        width: 250px;
+    .commentForm {
+        width: 80%;
         height: 100px;
-        margin-left: -50px;
+        margin-left: 20px;
         grid-column-start: 2;
+        grid-row-start: 2;
         /* padding-right: -100px; */
         box-sizing: border-box;
         padding: 10px;
@@ -83,12 +87,17 @@ li {
         resize: vertical;
     }
 
+
     .commentSubmitButton {
         width: 150px;
         margin-top: 10px;
+        margin-left: -20px;
         grid-column-start: 2;
+        grid-row-start: 3;
     }
     .commentBanner{
-        grid-column-start: 1;
-        padding-left: 100
+        grid-column-start: 2;
+        padding-left: 100;
+        margin-left: -20px;
+        grid-row-start: 1;
     }
