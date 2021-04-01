@@ -22,13 +22,13 @@ export default function SearchBar() {
 
 	return (
 		<form onSubmit={handleSubmit} className='searchSpace'>
-			<input type='submit' value='Submit' />
 			<input
 				className='searchLine'
 				type='text'
 				placeholder='Search by name'
 				onChange={(e) => setInput(e.target.value)}
 			/>
+			<input type='submit' value='Submit' className='searchButton' />
 		</form>
 	);
 }

@@ -10,12 +10,15 @@
 	margin-left: 60px;
 }
 .searchSpace {
-	display: grid;
-	grid-template-columns: 1fr 2fr 0.5fr;
+	display: inline-grid;
+	grid-template-columns: 0.1fr 2fr 1fr;
 }
 .searchLine {
 	grid-column-start: 1;
 	grid-column-end: 3;
+}
+.searchButton {
+	grid-column-start: 5;
 }
 .Filters {
 	grid-column-start: 1;
