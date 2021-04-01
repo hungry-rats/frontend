@@ -1,0 +1,40 @@
+.Home {
+	display: grid;
+	grid-template-rows: 0.1fr 5fr;
+	grid-template-columns: 0.5fr 2fr 0.5fr;
+	margin-top: 100px;
+}
+.Search {
+	grid-column-start: 2;
+	grid-row-start: 1;
+	margin-left: 60px;
+}
+.searchSpace {
+	display: grid;
+	grid-template-columns: 1fr 2fr 0.5fr;
+}
+.searchLine {
+	grid-column-start: 1;
+	grid-column-end: 3;
+}
+.Filters {
+	grid-column-start: 1;
+	grid-row-start: 1;
+	grid-row-end: 3;
+	background: red;
+	margin-left: 5px;
+}
+.Feed {
+	grid-column-start: 2;
+	grid-row-start: 2;
+}
+.UserInput {
+	grid-column-start: 3;
+	grid-row-start: 1;
+	grid-row-end: 3;
+	background: blue;
+	margin-right: 5px;
+}
+.card-image {
+	margin: 50px;
+}
