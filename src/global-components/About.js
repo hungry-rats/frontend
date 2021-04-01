@@ -1,14 +1,17 @@
 import React from 'react';
 import { Route, Link } from 'react-router-dom';
 import "./About.css";
+import NavBar from '../global-components/NavBar';
+
 
 
 const About = () => {
     return (
         <div className="aboutContainer">
+            <NavBar />
             <h1>Welcome to Seefood!</h1>
             <br></br>
-            <h2>We designed Seefood to be the tastiest app for discovering new and exciting recipes from all of your friends!</h2>
+            {/* <h2>We designed Seefood to be the tastiest app for discovering new and exciting recipes from all of your friends!</h2> */}
             <div className="qAndAGrid">
                 <div className="questions">
                     <h3 className="q1">Who should use Seefood?</h3>
@@ -32,8 +35,8 @@ const About = () => {
                     <h3 className="a3">YOLO 420</h3>
 
                 </div>
-                <div className = "aboutImage">
-                    <img  src="https://images.unsplash.com/photo-1466637574441-749b8f19452f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80" alt="ingredients"/>
+                <div>
+                    <img className = "aboutImage" src="https://images.unsplash.com/photo-1466637574441-749b8f19452f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80" alt="ingredients"/>
                 </div>
             </div>
 

@@ -35,7 +35,7 @@ export default function LandingCarousel() {
 	function comparePasswords(){
 
 		if(passwordConfirmState.passwordConfirm === formData.password){
-			alert("Passwords Match")} else alert("Passwords Do Not Match!")
+			alert("Success! Your Passwords Match")} else alert("Yikes! Your Passwords Do Not Match!")
 
 		axios.post(`http://localhost:8000/users/create`, formData)
 			.then(() => {
@@ -108,7 +108,7 @@ export default function LandingCarousel() {
 			</Button>
 			<div className='spacer'></div>
 			<div className='welcomeBar'>
-				<h1>Welcome to Tasty</h1>
+				<h1>Seefood</h1>
 			</div>
 			<div className='carouselGrid'>
 				<div className='carouselOne'>
@@ -293,10 +293,10 @@ export default function LandingCarousel() {
 
 				<div className='linkToFeed'>
 					<Jumbotron>
-						<h1>Welcome To Tasty</h1>
+						<h1>Welcome To Seefood</h1>
 						<p>
-							This is a simple hero unit, a simple jumbotron-style component for
-							calling extra attention to featured content or information.
+						We designed Seefood to be the tastiest app for discovering new and exciting recipes from all of your friends!
+						 Add your favorites and spread the love!
 						</p>
 						<p>
 							<Button variant='info'>Visit my Feed</Button>
@@ -322,7 +322,7 @@ export default function LandingCarousel() {
 								onChange={handleUserName}
 								value={setInputValue}
 								onSubmit={handleSubmit}>
-								<Form.Label>Username</Form.Label>
+								<Form.Label className="userNameLabel">Username</Form.Label>
 								<Form.Control type='password' placeholder='Username' />
 							</Form.Group>
 
