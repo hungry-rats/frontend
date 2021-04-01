@@ -101,3 +101,7 @@ li {
         margin-left: -20px;
         grid-row-start: 1;
     }
+
+    .strike {
+        text-decoration: line-through;
+     }

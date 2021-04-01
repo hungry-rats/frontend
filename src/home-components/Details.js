@@ -13,6 +13,7 @@ export default function Details({ match }) {
 	// console.log(match.params);
 	const id = match.params.id;
 	const [details, setDetails] = useState();
+	const [isClicked, setIsClicked] = useState(false);
 
 	const url = `http://localhost:8000/recipes/${id}`;
 	useEffect(() => {
@@ -30,6 +31,14 @@ export default function Details({ match }) {
 
 	if (details) {
 		console.log(details);
+
+const toggleClick = (index) => {
+	let mappedOut = details.information[0].directions.map((index) => {
+		return details.information[0].directions.index == index ? {...details.information[0].directions, isClicked: !details.information[0].directions.isClicked} : {...details.information[0].directions}
+	})
+	setIsClicked(!isClicked)
+}
+
 
 		return (
 			<div>
@@ -68,7 +77,9 @@ export default function Details({ match }) {
 							{details.information[0].directions.map((step, index) => {
 								return (
 									<li className= "directionListItem">
-										<h6 className="step">Step {index+1}</h6> {step}
+										<div>
+											<h6 className={`step ${isClicked ? "strike" : null}`} onClick={toggleClick}>Step {index+1}</h6> {step}
+										</div>
 									</li>
 								);
 							})}

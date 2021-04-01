@@ -1,3 +1,5 @@
+  
+
 .individuals {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -23,6 +25,7 @@ a{
 
 .linkedin{
     height: 100px;
+    margin-top: 10px;
 }
 
 .projectDetails{
@@ -45,6 +48,10 @@ a{
 .marcus {
     grid-column-start: 6;
 
+}
+
+.footerPhoto{
+    border-radius: 40px;
 }
 
 /* Via: https://travis.media/how-to-make-an-item-grow-on-hover-with-css/ */
