@@ -1,0 +1,22 @@
+.Card{
+    background: inherit;
+    /* padding: -50px; */
+}
+
+.cardTitle {
+    font-size: 10vh;
+}
+
+.cardImage {
+    border-radius: 30px;
+    max-width: 1000px;
+}
+
+/* Via: https://travis.media/how-to-make-an-item-grow-on-hover-with-css/ */
+.grow { 
+    transition: all .2s ease-in-out; 
+    }
+    
+.grow:hover { 
+    transform: scale(1.1); 
+    }
