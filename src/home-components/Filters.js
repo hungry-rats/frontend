@@ -1,5 +1,5 @@
 import React from 'react';
 
 export default function Filters() {
-	return <div></div>;
+	return <div>Filters</div>;
 }
