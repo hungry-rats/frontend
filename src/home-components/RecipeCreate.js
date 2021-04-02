@@ -38,12 +38,34 @@ const RecipeCreate = () => {
 		});
 	}
 
-    return (
-        <div>
-            <h1>POST RECIPE</h1>
-            <button onClick={handleSubmit}></button>
-        </div>
-    );
+   return (
+		<div>
+			<h1>New recipie</h1>
+			<Form onSubmit={handleSubmit}>
+				<Form.Group controlId='title'>
+					<Form.Label>Title</Form.Label>
+					<Form.Control placeholder='Enter title' />
+				</Form.Group>
+				<Form.Group controlId='inspiredBy'>
+					<Form.Label>Inspired By</Form.Label>
+					<Form.Control placeholder='Enter Origin' />
+				</Form.Group>
+				<Form.Group controlId='imageSource'>
+					<Form.Label>Image Link</Form.Label>
+					<Form.Control placeholder='Enter link to the image' />
+				</Form.Group>
+				<Form.Group controlId='ingridients'>
+					<Form.Label>Image Link</Form.Label>
+					<Form.Control placeholder='Enter Ingridients' />
+				</Form.Group>
+				<Button variant='primary' type='submit'>
+					Submit
+				</Button>
+			</Form>
+			{/* <button onClick={handleSubmit}></button> */}
+		</div>
+	);
 };
 
 export default RecipeCreate;
+
