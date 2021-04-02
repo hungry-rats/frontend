@@ -6,9 +6,15 @@ import "./LandingCarousel.css";
 import axios from "axios";
 import { atom, useRecoilState } from "recoil"
 
+
 export const userState = atom({
 	key: 'userState',
 	default: false,
+});
+
+export const tokenState= atom({
+	key: 'tokenState',
+	default: null,
 });
 
 export default function LandingCarousel() {
@@ -16,11 +22,14 @@ export default function LandingCarousel() {
 	//Establish State Here
 	const history = useHistory()
 	const [user, setUser] = useRecoilState(userState)
+	const [token, setToken] = useRecoilState(tokenState)
 	const [formData, setFormData] = useState({
 		username: null,
 		email: null,
 		password: null
 	})
+
+	// console.log(token)
 
 	// console.log(useRecoilState(userState))
 
@@ -37,7 +46,7 @@ export default function LandingCarousel() {
 		if(passwordConfirmState.passwordConfirm === formData.password){
 			alert("Passwords Match")} else alert("Passwords Do Not Match!")
 
-		axios.post(`http://localhost:8000/users`, formData)
+		axios.post(`http://localhost:8000/users/create`, formData)
 			.then(() => {
 				history.push('/')
 				console.log(history)
@@ -381,7 +390,6 @@ export default function LandingCarousel() {
 					<Form.Label>Username</Form.Label>
 					<Form.Control type="password" placeholder="Username"  />
 				</Form.Group>
-			
 					<Form.Group controlId="password" className="passwordEntryFormField" required onChange={handlePassword} value={setInputValue} onSubmit={handleSubmit}  >
 						<Form.Label>Password</Form.Label>
 						<Form.Control type="password" placeholder="Password" />

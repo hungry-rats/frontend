@@ -1,0 +1,94 @@
+
+.titleImageContainer{
+    display: grid;
+    grid-template-rows: .1fr 1fr;
+    grid-template-columns: .5fr 2fr .5fr;
+}
+
+.itemTitleBanner{
+    background: cadetblue;
+    grid-row-start: 1;
+    grid-column-start: 2;
+}
+
+.mainPhoto {
+    width: 100%;
+    grid-column-start: 2
+}
+
+.sideBarOne{
+    grid-column-start: 1;
+    grid-row-start: 2;
+    background: coral;
+}
+
+li {
+    list-style-type: none;
+}
+
+.informationBody {
+    display: grid;
+    grid-template-columns: 42% 42%;
+    overflow-wrap: break-word;
+}
+
+.ingredientList{
+    margin-right:-100px;
+}
+
+.directionList {
+    /* background: cadetblue; */
+    text-align: left;
+    /* white-space: pre-wrap; */
+;
+}
+
+.directionListItem{
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+.directionTitle{
+    text-align: center;
+}
+
+.ingredientTitle{
+    text-align: center;}
+
+    .step{
+        font-weight: bolder;
+    }
+
+    .commentContainer{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        align-items: center;
+        width: 600px;
+        /* justify-items: center; */
+        /* grid-gap: */
+    }
+ 
+    input {
+        width: 250px;
+        height: 100px;
+        margin-left: -50px;
+        grid-column-start: 2;
+        /* padding-right: -100px; */
+        box-sizing: border-box;
+        padding: 10px;
+        border: 2px solid cadetblue;
+        box-shadow:0 0 30px 4px rgba(0,0,0,0.2);
+        border-radius: 30px;
+        resize: vertical;
+    }
+
+    .commentSubmitButton {
+        width: 150px;
+        margin-top: 10px;
+        grid-column-start: 2;
+    }
+    .commentBanner{
+        grid-column-start: 1;
+        padding-left: 100
+    }
