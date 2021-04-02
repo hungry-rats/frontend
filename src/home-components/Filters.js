@@ -25,7 +25,7 @@ export default function Filters() {
 				<Form.Switch label='Switch 2' onChange={onChange} />
 			</Form>
 			<Button variant='dark' nClick={onSubmit}>
-				Dark
+				Filter my Results
 			</Button>
 		</div>
 	);

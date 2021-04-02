@@ -1,14 +1,18 @@
 
 .titleImageContainer{
     display: grid;
-    grid-template-rows: .1fr 1fr;
+    grid-template-rows: .1fr .1fr 1fr;
     grid-template-columns: .5fr 2fr .5fr;
 }
 
 .itemTitleBanner{
-    background: cadetblue;
+    /* background: cadetblue; */
     grid-row-start: 1;
     grid-column-start: 2;
+}
+
+.inspiration{
+    grid-row-start: 2;
 }
 
 .mainPhoto {
@@ -19,8 +23,7 @@
 .sideBarOne{
     grid-column-start: 1;
     grid-row-start: 2;
-    background: coral;
-}
+    grid-row-end: 3;}
 
 li {
     list-style-type: none;
