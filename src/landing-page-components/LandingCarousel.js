@@ -6,12 +6,6 @@ import "./LandingCarousel.css";
 import axios from "axios";
 import { atom, useRecoilState } from "recoil"
 
-
-export const userState = atom({
-	key: 'userState',
-	default: false,
-});
-
 export const tokenState= atom({
 	key: 'tokenState',
 	default: null,
@@ -21,7 +15,6 @@ export default function LandingCarousel() {
 
 	//Establish State Here
 	const history = useHistory()
-	const [user, setUser] = useRecoilState(userState)
 	const [token, setToken] = useRecoilState(tokenState)
 	const [formData, setFormData] = useState({
 		username: null,
@@ -44,17 +37,15 @@ export default function LandingCarousel() {
 	function comparePasswords(){
 
 		if(passwordConfirmState.passwordConfirm === formData.password){
-			alert("Success! Your Passwords Match")} else alert("Yikes! Your Passwords Do Not Match!")
-
-		axios.post(`http://localhost:8000/users/create`, formData)
+			axios.post(`http://localhost:8000/users/create`, formData)
 			.then(() => {
 				history.push('/')
 				console.log(history)
 			})
-			.then(() => {
-				setUser(true)
-			})
-			.catch(console.error)
+			.catch(console.error)}
+			 else alert("Yikes! Your Passwords Do Not Match!")
+
+		
 	}
 
 	//Handle Change Here
