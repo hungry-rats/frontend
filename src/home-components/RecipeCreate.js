@@ -16,7 +16,7 @@ const RecipeCreate = () => {
 		event.preventDefault();
 
 		axios({
-			url: `http://localhost:8000/recipes`,
+			url: `https://seefood-backend.herokuapp.com/recipes`,
 			method: 'POST',
 			data: recipe,
 			headers: {

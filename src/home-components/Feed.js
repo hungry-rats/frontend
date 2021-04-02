@@ -14,7 +14,7 @@ export default function Feed({ data }) {
 		return (
 			<div>
 				{data.map((item) => {
-					console.log(item);
+					// console.log(item);
 					return (
 						<div key={item._id}>
 							<Card item={item} />

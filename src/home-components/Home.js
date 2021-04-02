@@ -22,9 +22,9 @@ export default function Home() {
 	const [data, setData] = useState();
 	const [search, setSearch] = useRecoilState(searchState);
 
-	console.log(token)
+	console.log(token);
 
-	const url = `http://localhost:8000/recipes/`;
+	const url = `https://seefood-backend.herokuapp.com/recipes/`;
 
 	useEffect(() => {}, [data]);
 

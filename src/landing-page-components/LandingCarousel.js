@@ -1,26 +1,25 @@
-import React, { useState, useEffect } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { Button, Carousel, Form, Jumbotron } from "react-bootstrap";
+import React, { useState, useEffect } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Button, Carousel, Form, Jumbotron } from 'react-bootstrap';
 import { useHistory, Link } from 'react-router-dom';
-import "./LandingCarousel.css";
-import axios from "axios";
-import { atom, useRecoilState } from "recoil"
+import './LandingCarousel.css';
+import axios from 'axios';
+import { atom, useRecoilState } from 'recoil';
 
-export const tokenState= atom({
+export const tokenState = atom({
 	key: 'tokenState',
 	default: null,
 });
 
 export default function LandingCarousel() {
-
 	//Establish State Here
-	const history = useHistory()
-	const [token, setToken] = useRecoilState(tokenState)
+	const history = useHistory();
+	const [token, setToken] = useRecoilState(tokenState);
 	const [formData, setFormData] = useState({
 		username: null,
 		email: null,
-		password: null
-	})
+		password: null,
+	});
 
 	// console.log(token)
 
@@ -29,50 +28,46 @@ export default function LandingCarousel() {
 	// const [emailState, setEmailState] = useState()
 	// const [usernameState, setUsernameState] = useState()
 	// const [passwordState, setPasswordState] = useState()
-	const [passwordConfirmState, setPasswordConfirmState] = useState()
+	const [passwordConfirmState, setPasswordConfirmState] = useState();
 
-	const [inputValue, setInputValue] = useState({})
+	const [inputValue, setInputValue] = useState({});
 
 	//Declare Password Comparison Function Here
-	function comparePasswords(){
-
-		if(passwordConfirmState.passwordConfirm === formData.password){
-			axios.post(`http://localhost:8000/users/create`, formData)
-			.then(() => {
-				history.push('/')
-				console.log(history)
-			})
-			.catch(console.error)}
-			 else alert("Yikes! Your Passwords Do Not Match!")
-
-		
+	function comparePasswords() {
+		if (passwordConfirmState.passwordConfirm === formData.password) {
+			axios
+				.post(`https://seefood-backend.herokuapp.com/users/create`, formData)
+				.then(() => {
+					history.push('/');
+					console.log(history);
+				})
+				.catch(console.error);
+		} else alert('Yikes! Your Passwords Do Not Match!');
 	}
 
 	//Handle Change Here
-	function handleChange(event){
+	function handleChange(event) {
 		setInputValue({
-			inputValue: event.target.value
-		})
-
+			inputValue: event.target.value,
+		});
 	}
-	function handleUserName(event){
+	function handleUserName(event) {
 		setFormData({
 			email: formData.email,
 			username: event.target.value,
-			password: formData.password
-		})
-		}
-	
-
-	function handleEmail(event){
-		setFormData({
-			email: event.target.value,
-			username: formData.username,
-			password: formData.password
+			password: formData.password,
 		});
 	}
 
-	function handlePassword(event){
+	function handleEmail(event) {
+		setFormData({
+			email: event.target.value,
+			username: formData.username,
+			password: formData.password,
+		});
+	}
+
+	function handlePassword(event) {
 		setFormData({
 			email: formData.email,
 			username: formData.username,
@@ -80,16 +75,14 @@ export default function LandingCarousel() {
 		});
 	}
 
-	function handlePasswordConfirm(event){
+	function handlePasswordConfirm(event) {
 		setPasswordConfirmState({
-			passwordConfirm: event.target.value
-		})
+			passwordConfirm: event.target.value,
+		});
 	}
-	
 
-	
 	//Handle Submit Here
-	function handleSubmit(event){
+	function handleSubmit(event) {
 		event.preventDefault();
 		console.log(event.target);
 	}
@@ -98,7 +91,7 @@ export default function LandingCarousel() {
 
 	// }
 
-  return (
+	return (
 		<div className='container'>
 			<Button variant='info' className='logoIcon'>
 				PLACEHOLDER FOR ICON
@@ -295,8 +288,9 @@ export default function LandingCarousel() {
 					<Jumbotron>
 						<h1>Welcome To Seefood</h1>
 						<p>
-						We designed Seefood to be the tastiest app for discovering new and exciting recipes from all of your friends!
-						 Add your favorites and spread the love!
+							We designed Seefood to be the tastiest app for discovering new and
+							exciting recipes from all of your friends! Add your favorites and
+							spread the love!
 						</p>
 						<p>
 							<Button variant='info'>Visit my Feed</Button>
@@ -322,7 +316,7 @@ export default function LandingCarousel() {
 								onChange={handleUserName}
 								value={setInputValue}
 								onSubmit={handleSubmit}>
-								<Form.Label className="userNameLabel">Username</Form.Label>
+								<Form.Label className='userNameLabel'>Username</Form.Label>
 								<Form.Control type='password' placeholder='Username' />
 							</Form.Group>
 
@@ -356,53 +350,72 @@ export default function LandingCarousel() {
 				</div>
 			</div>
 
+			<div className='linkToFeed'>
+				<Jumbotron>
+					<h1>Welcome To Tasty</h1>
+					<p>
+						This is a simple hero unit, a simple jumbotron-style component for
+						calling extra attention to featured content or information.
+					</p>
+					<p>
+						<Button variant='info'>Visit my Feed</Button>
+					</p>
+				</Jumbotron>
 
-		<div className = "linkToFeed">
-		<Jumbotron>
-			<h1>Welcome To Tasty</h1>
-			<p>
-				This is a simple hero unit, a simple jumbotron-style component for calling
-				extra attention to featured content or information.
-			</p>
-			<p>
-				<Button variant="info">Visit my Feed</Button>
-			</p>
-		</Jumbotron>
-
-		<div className = "signUpForm">
+				<div className='signUpForm'>
 					<h2> Sign Up!</h2>
-			<Form>
-				<Form.Group controlId="email" className="emailFormField" required onChange={handleEmail} value={setInputValue} onSubmit={handleSubmit}>
-					<Form.Label>Email address</Form.Label>
-					<Form.Control type="email" placeholder="Enter email"  />
-				</Form.Group>
+					<Form>
+						<Form.Group
+							controlId='email'
+							className='emailFormField'
+							required
+							onChange={handleEmail}
+							value={setInputValue}
+							onSubmit={handleSubmit}>
+							<Form.Label>Email address</Form.Label>
+							<Form.Control type='email' placeholder='Enter email' />
+						</Form.Group>
 
-				<Form.Group controlId="username" className="usernameFormField" required onChange={handleUserName} value={setInputValue} onSubmit={handleSubmit}>
-					<Form.Label>Username</Form.Label>
-					<Form.Control type="password" placeholder="Username"  />
-				</Form.Group>
-					<Form.Group controlId="password" className="passwordEntryFormField" required onChange={handlePassword} value={setInputValue} onSubmit={handleSubmit}  >
-						<Form.Label>Password</Form.Label>
-						<Form.Control type="password" placeholder="Password" />
-					</Form.Group>
-				<Form.Group controlId="passwordConfirm" className="passwordConfirmFormField" required onChange={handlePasswordConfirm} value={setInputValue} onSubmit={handleSubmit} >
-					<Form.Label>Confirm Password</Form.Label>
-					<Form.Control type="password" placeholder="Confirm Password" r/>
-				</Form.Group>
-				
-
-			</Form>
-			<Button 
-				variant="info"
-				type="submit"
-				className="submitFormButton"
-				onClick={comparePasswords}>Submit</Button>
-		</div>
-		
-		</div>
-	
-
-
+						<Form.Group
+							controlId='username'
+							className='usernameFormField'
+							required
+							onChange={handleUserName}
+							value={setInputValue}
+							onSubmit={handleSubmit}>
+							<Form.Label>Username</Form.Label>
+							<Form.Control type='password' placeholder='Username' />
+						</Form.Group>
+						<Form.Group
+							controlId='password'
+							className='passwordEntryFormField'
+							required
+							onChange={handlePassword}
+							value={setInputValue}
+							onSubmit={handleSubmit}>
+							<Form.Label>Password</Form.Label>
+							<Form.Control type='password' placeholder='Password' />
+						</Form.Group>
+						<Form.Group
+							controlId='passwordConfirm'
+							className='passwordConfirmFormField'
+							required
+							onChange={handlePasswordConfirm}
+							value={setInputValue}
+							onSubmit={handleSubmit}>
+							<Form.Label>Confirm Password</Form.Label>
+							<Form.Control type='password' placeholder='Confirm Password' r />
+						</Form.Group>
+					</Form>
+					<Button
+						variant='info'
+						type='submit'
+						className='submitFormButton'
+						onClick={comparePasswords}>
+						Submit
+					</Button>
+				</div>
+			</div>
 		</div>
 	);
 }

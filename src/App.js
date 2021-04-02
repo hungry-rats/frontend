@@ -46,7 +46,7 @@ function App() {
 	} else {
 		return (
 			<div>
-				<NavBar />
+				{/* <NavBar /> */}
 
 				<Route path='/home' exact render={() => <Home />} />
 				<Route path='/recipes/:id' exact component={Details} />
