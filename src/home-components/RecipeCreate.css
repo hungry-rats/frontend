@@ -12,14 +12,17 @@ form {
 
 .titleFormField {
 	grid-row-start: 1;
+	background: blue;
 }
 
 .inspiredByFormField {
-	grid-row-start: 3;
+	grid-row-start: 2;
 }
 
-.ingridients {
+.ingridientsFormField {
 	display: grid;
+	background: blue;
+	grid-row-start: 2;
 	grid-template-columns: 0.5fr 1fr;
 	grid-template-rows: 1fr 1fr 1fr;
 	align-items: center;
