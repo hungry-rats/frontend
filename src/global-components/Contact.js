@@ -48,6 +48,7 @@ const Contact = () => {
                     <h3>Marcus</h3>
                     <a href="https://github.com/mgtz505">My GH Account</a>
                     <br></br>
+                    <br></br>
                     <a href="https://www.linkedin.com/in/gutierrezmarcus/">Connect on LinkedIn</a>
 
                 </div>

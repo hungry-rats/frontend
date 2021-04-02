@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import NavBar from '../global-components/NavBar';
+import { Link } from 'react-router-dom';
 import "./Details.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Button, Carousel, Form, Jumbotron } from "react-bootstrap";
@@ -45,8 +46,13 @@ const toggleClick = (index) => {
 				<NavBar />
 				<div className="titleImageContainer">
 					<h1 className="itemTitleBanner">{details.title}</h1>
+					<h3 className="inspiration"> Inspired by {details.inspiredBy}</h3>
 					<img className="mainPhoto" src={details.image} alt={details.title} />
-					<div className="sideBarOne">PLACEHOLDER</div>
+						<div className="sideBarOne">
+							<Link className="return" to={'/home'}>
+								<Button variant="info">Return to Feed</Button>
+							</Link>
+						</div>
 					<Button variant="info">Post a Recipe</Button>
 					
 				</div>
