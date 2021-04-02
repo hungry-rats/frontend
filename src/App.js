@@ -46,6 +46,7 @@ function App() {
 		return (
 			<div>
 				<NavBar />
+				<RecipeCreate />
 				<Route path='/' exact render={() => <Home />} />
 				<Route path='/recipes/:id' exact component={Details} />
 				{/* <Route path='/about' exact component={About} /> */}
