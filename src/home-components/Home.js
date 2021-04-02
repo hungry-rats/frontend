@@ -8,6 +8,8 @@ import HomeStyle from './Home.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { atom, useRecoilState } from 'recoil';
 import RecipeCreate from './RecipeCreate';
+import { tokenState as tokenStateAtom } from '../landing-page-components/LandingCarousel';
+
 
 const axios = require('axios').default;
 
@@ -17,8 +19,11 @@ export const searchState = atom({
 });
 
 export default function Home() {
+	const [token, setToken] = useRecoilState(tokenStateAtom);
 	const [data, setData] = useState();
 	const [search, setSearch] = useRecoilState(searchState);
+
+	// console.log(token)
 
 	const url = `http://localhost:8000/recipes/`;
 
@@ -50,7 +55,7 @@ export default function Home() {
 	if (data) {
 		return (
 			<div>
-				<NavBar />
+				{/* <NavBar /> */}
 
 				<div className='Home'>
 					<div className='Search'>

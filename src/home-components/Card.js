@@ -3,8 +3,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import HomeStyle from './Home.css';
 import './Card.css';
+import { tokenState as tokenStateAtom } from '../landing-page-components/LandingCarousel';
+import { useRecoilState } from 'recoil';
+
 
 export default function Card({ item }) {
+	const [token, setToken] = useRecoilState(tokenStateAtom);
+
 	return (
 		<div>
 			<Link className='test' to={`recipes/${item._id}`}>

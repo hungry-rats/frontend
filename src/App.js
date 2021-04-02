@@ -16,6 +16,7 @@ import About from './global-components/About';
 import Contact from './global-components/Contact';
 import RecipeCreate from './home-components/RecipeCreate';
 
+
 function App() {
 	const [token, setToken] = useRecoilState(tokenStateAtom);
 
@@ -49,7 +50,17 @@ function App() {
 				<NavBar />
 
 				<Route path='/home' exact render={() => <Home />} />
-				<Route path='/recipes/:id' exact component={Details} />
+				<Route
+					path='/recipes/:id'
+					exact component={Details}
+					// exact
+					// render={() => (
+					// 	<div>
+					// 		{/* <Comments /> */}
+					// 		<Details />
+					// 	</div>
+					// )}
+				/>
 				<Route path='/createrecipe' exact component={RecipeCreate} />
 				{/* <Route path='/about' exact component={About} /> */}
 			</div>
