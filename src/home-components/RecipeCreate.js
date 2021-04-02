@@ -1,32 +1,44 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { Button, Form } from 'react-bootstrap';
-import './RecipeCreate.css';
 import axios from 'axios';
-
-console.log('recipie');
+import { tokenState as tokenStateAtom } from '../landing-page-components/LandingCarousel';
+import { atom, useRecoilState, useRecoilValue } from 'recoil';
 
 const RecipeCreate = () => {
-	const [recipe, setRecipe] = useState({
-		title: 'Hopefully Final Test 2',
-		author: 'jen the genius',
-	});
+    const [token, setToken] = useRecoilState(tokenStateAtom);
+    const [recipe, setRecipe] = useState({
+        title: "TESTTESTTESTTEST",
+        author: "user 1",
+    })
 
-	const handleSubmit = (event) => {
-		event.preventDefault();
+    console.log(token)
 
-		axios({
-			url: `http://localhost:8000/recipes`,
-			method: 'POST',
-			data: recipe,
-			headers: {
-				Authorization:
-					'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwNjVhYWU4OTdhZTBjMDY3MTIyMTE2YyIsImlhdCI6MTYxNzM3MzYwNCwiZXhwIjoxNjE3NDA5NjA0fQ.91SNseVG1VwAgHA9Cxd1OZYJUK5dpLxAxEDoQfDYLqA',
-			},
+    const handleSubmit = (event) => {
+        event.preventDefault();
+
+        axios({
+					url: `http://localhost:8000/recipes`,
+					method: 'POST',
+					data: recipe,
+					headers: {
+						Authorization:
+							`Bearer ${token}`,
+					},
+				});}
+
+    function handleInformation(event) {
+		setRecipe({
+			title: event.target.value,
+			author: event.target.value,
+			inspiredBy: event.target.value,
+            allergies: event.target.value,
+            image: event.target.value,
+            ingredients: [event.target.value],
+            directions: [event.target.value]
 		});
-	};
+	}
 
-	return (
+   return (
 		<div>
 			<h1>New recipie</h1>
 			<Form onSubmit={handleSubmit}>
@@ -56,3 +68,4 @@ const RecipeCreate = () => {
 };
 
 export default RecipeCreate;
+

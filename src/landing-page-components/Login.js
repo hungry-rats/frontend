@@ -9,7 +9,6 @@ import axios from 'axios';
 
 const Login = (props) => {
 	const history = useHistory();
-	const [user, setUser] = useRecoilState(userStateAtom);
 	const [token, setToken] = useRecoilState(tokenStateAtom);
 	const [show, setShow] = useState(false);
 	const [userData, setUserData] = useState({

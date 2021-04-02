@@ -11,14 +11,12 @@ import Login from './landing-page-components/Login';
 // import RecipeCreate from './home-components/RecipeCreate';
 import { atom, useRecoilState, useRecoilValue } from 'recoil';
 import { userState as userStateAtom } from './landing-page-components/LandingCarousel';
-
 import { tokenState as tokenStateAtom } from './landing-page-components/LandingCarousel';
 import About from './global-components/About';
 import Contact from './global-components/Contact';
 import RecipeCreate from './home-components/RecipeCreate';
 
 function App() {
-	const [user, setUser] = useRecoilState(userStateAtom);
 	const [token, setToken] = useRecoilState(tokenStateAtom);
 
 	console.log(token);
@@ -49,6 +47,7 @@ function App() {
 		return (
 			<div>
 				<NavBar />
+
 				<Route path='/home' exact render={() => <Home />} />
 				<Route path='/recipes/:id' exact component={Details} />
 				<Route path='/createrecipe' exact component={RecipeCreate} />
