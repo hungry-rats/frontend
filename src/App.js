@@ -10,18 +10,22 @@ import Details from './home-components/Details';
 import Login from './landing-page-components/Login';
 import { atom, useRecoilState, useRecoilValue } from 'recoil';
 import { userState as userStateAtom } from './landing-page-components/LandingCarousel';
+import RecipeCreate from './landing-page-components/RecipeCreate'
+import { tokenState as tokenStateAtom } from './landing-page-components/LandingCarousel';
 import About from './global-components/About';
 import Contact from './global-components/Contact';
 
 
 function App() {
 	const [user, setUser] = useRecoilState(userStateAtom);
+	const [token, setToken] = useRecoilState(tokenStateAtom);
 
-	console.log(user);
+	console.log(token)
 
-	if (user === false) {
+	if (token === null) {
 		return (
 			<div className='App'>
+				<RecipeCreate />
 				<Route path='/' exact render={() => <LandingCarousel />} />
 
 				<Route path='/login' exact render={() => <Login />} />

@@ -6,9 +6,15 @@ import "./LandingCarousel.css";
 import axios from "axios";
 import { atom, useRecoilState } from "recoil"
 
+
 export const userState = atom({
 	key: 'userState',
 	default: false,
+});
+
+export const tokenState= atom({
+	key: 'tokenState',
+	default: null,
 });
 
 export default function LandingCarousel() {
@@ -16,11 +22,14 @@ export default function LandingCarousel() {
 	//Establish State Here
 	const history = useHistory()
 	const [user, setUser] = useRecoilState(userState)
+	const [token, setToken] = useRecoilState(tokenState)
 	const [formData, setFormData] = useState({
 		username: null,
 		email: null,
 		password: null
 	})
+
+	// console.log(token)
 
 	// console.log(useRecoilState(userState))
 
