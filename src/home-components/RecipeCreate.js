@@ -8,10 +8,7 @@ import './RecipeCreate.css';
 
 const RecipeCreate = () => {
 	const [token, setToken] = useRecoilState(tokenStateAtom);
-	const [recipe, setRecipe] = useState({
-		title: 'TESTTESTTESTTEST',
-		author: 'user 1',
-	});
+	const [recipe, setRecipe] = useState({});
 
 	console.log(token);
 
