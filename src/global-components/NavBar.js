@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from 'react-bootstrap/Navbar';
+import './NavBar.css'
 import Nav from 'react-bootstrap/Nav';
 import { Link } from 'react-router-dom';
 
@@ -7,21 +8,21 @@ const NavBar = () => {
 	return (
 		<Navbar
 			className='Nav'
-			style={{ maxHeight: '3vh' }}
+			style={{ maxHeight: '6vh' }}
 			collapseOnSelect
 			variant='light'
 			expand='md'>
-			<Navbar.Brand style={{ color: 'black' }} as={Link} to='/home'>
-				<b>Home</b>
+			<Navbar.Brand className="grow" style={{ color: 'black' }} as={Link} to='/home'>
+				<b className="homeLink">Home</b>
 			</Navbar.Brand>
 			<Navbar.Toggle aria-controls='basic-navbar-nav' />
 			<Navbar.Collapse id='basic-navbar-nav'>
 				<Nav>
-					<Nav.Link style={{ color: 'black' }} as={Link} to='/about'>
-						<b>About</b>
+					<Nav.Link className="grow" style={{ color: 'black' }} as={Link} to='/about'>
+						<b className="aboutLink">About</b>
 					</Nav.Link>
-					<Nav.Link style={{ color: 'black' }} as={Link} to='/contact'>
-						<b>Contact</b>
+					<Nav.Link className="grow" style={{ color: 'black' }} as={Link} to='/contact'>
+						<b className="contactLink">Contact</b>
 					</Nav.Link>
 				</Nav>
 

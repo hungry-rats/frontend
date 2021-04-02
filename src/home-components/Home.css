@@ -1,0 +1,59 @@
+
+
+.Home {
+	display: grid;
+	grid-template-rows: 0.1fr 5fr;
+	grid-template-columns: 0.5fr 2fr 0.5fr;
+	margin-top: 100px;
+	background: inherit;
+}
+.Search {
+	grid-column-start: 2;
+	grid-row-start: 1;
+	margin-left: 20px;
+	margin-right: 20px;
+
+}
+.searchSpace {
+	display: grid;
+	grid-template-columns: 0.5fr .05fr 4fr ;
+	justify-items: stretch;
+	
+}
+.searchLine {
+	grid-column-start: 3;
+	/* grid-column-end: 3; */
+}
+.searchButton {
+	grid-column-start: 1;
+	grid-row-start: 1;
+}
+.Filters {
+	grid-column-start: 1;
+	grid-row-start: 1;
+	grid-row-end: 3;
+	background: red;
+	margin-left: 5px;
+}
+.Feed {
+	grid-column-start: 2;
+	grid-row-start: 2;
+}
+.UserInput {
+	grid-column-start: 3;
+	grid-row-start: 1;
+	grid-row-end: 3;
+	background: blue;
+	margin-right: 5px;
+}
+.card-image {
+	margin: 50px;
+}
+
+Form {
+	/* background: purple; */
+	/* height: 100px;
+	display: grid; */
+	/* grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr; */
+}

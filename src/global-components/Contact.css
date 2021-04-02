@@ -1,0 +1,68 @@
+  
+
+.individuals {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: .5fr;
+}
+
+.rowHeader{
+    /* grid-row-start: 2; */
+}
+
+a{
+    font-size: 30px;
+}
+.gitHub, .linkedin {
+    width: 150px;
+}
+
+.gitHub{
+    grid-column-start: 1;
+    grid-row-start: 2;
+    background: grey
+}
+
+.linkedin{
+    height: 100px;
+    margin-top: 10px;
+}
+
+.projectDetails{
+    grid-column-start: 2;
+}
+
+.dylan{
+    grid-column-start: 3;
+}
+
+.michael{
+    grid-column-start: 4;
+}
+
+.josmar{
+    grid-column-start: 5;
+
+}
+
+.marcus {
+    grid-column-start: 6;
+
+}
+
+.footerPhoto{
+    border-radius: 40px;
+}
+
+/* Via: https://travis.media/how-to-make-an-item-grow-on-hover-with-css/ */
+.grow { 
+    transition: all .2s ease-in-out; 
+    }
+    
+.grow:hover { 
+    transform: scale(1.1); 
+    }
+
+/* img {
+    width: 500px;
+} */
