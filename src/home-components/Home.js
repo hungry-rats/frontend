@@ -7,6 +7,7 @@ import NavBar from '../global-components/NavBar';
 import HomeStyle from './Home.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { atom, useRecoilState } from 'recoil';
+import RecipeCreate from './RecipeCreate';
 
 const axios = require('axios').default;
 
@@ -62,6 +63,7 @@ export default function Home() {
 						<Feed data={data} />
 					</div>
 					<div className='UserInput'>
+						{/* <RecipeCreate /> */}
 						<AddRecipe />
 					</div>
 				</div>

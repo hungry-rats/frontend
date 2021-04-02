@@ -17,7 +17,7 @@ const Login = (props) => {
 		password: null,
 	});
 
-	console.log(token)
+	console.log(token);
 
 	const handleClose = () => setShow(false);
 	const handleShow = () => setShow(true);
@@ -29,18 +29,17 @@ const Login = (props) => {
 	//Handle Submit Here
 	function handleSubmit(event) {
 		event.preventDefault();
-		loginFunction()
+		loginFunction();
 		// console.log(event.target);
 	}
-	
+
 	function handleUserName(event) {
 		setUserData({
 			username: event.target.value,
 			password: userData.password,
 		});
 	}
-	
-	
+
 	function handlePassword(event) {
 		setUserData({
 			username: userData.username,
@@ -53,16 +52,17 @@ const Login = (props) => {
 			url: `http://localhost:8000/signin`,
 			method: 'POST',
 			data: userData,
-		}).then(({ data }) => {
-			console.log(data)
-			setToken(data.token)
 		})
-		.then(() => {
-			history.push('/')
-		})	
-	}
-	console.log(token)
-	
+			.then(({ data }) => {
+				console.log(data);
+				setToken(data.token);
+			})
+			.then(() => {
+				history.push('/home');
+			});
+	};
+	console.log(token);
+
 	// console.log(props.token)
 
 	return (
@@ -87,9 +87,7 @@ const Login = (props) => {
 							<Form.Control type='Username' placeholder='Enter Username' />
 						</Form.Group>
 
-						<Form.Group
-							controlId='formBasicPassword'
-							onChange={handlePassword}>
+						<Form.Group controlId='formBasicPassword' onChange={handlePassword}>
 							<Form.Label>Password</Form.Label>
 							<Form.Control type='password' placeholder='Password' />
 						</Form.Group>
@@ -100,7 +98,8 @@ const Login = (props) => {
 							// to='/'
 							/* onClick={() => {
 								setUser(true);
-							}} */>
+							}} */
+						>
 							Submit
 						</Button>
 					</Form>
@@ -113,6 +112,6 @@ const Login = (props) => {
 			</Modal>
 		</div>
 	);
-}
+};
 
 export default Login;
