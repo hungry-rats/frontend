@@ -15,6 +15,7 @@ import { tokenState as tokenStateAtom } from './landing-page-components/LandingC
 import About from './global-components/About';
 import Contact from './global-components/Contact';
 import RecipeCreate from './home-components/RecipeCreate';
+import User from './home-components/User'
 
 function App() {
 	const [token, setToken] = useRecoilState(tokenStateAtom);
@@ -49,6 +50,7 @@ function App() {
 				{/* <NavBar /> */}
 
 				<Route path='/home' exact render={() => <Home />} />
+				<Route path='/user' exact render={() => <User />} />
 				<Route path='/recipes/:id' exact component={Details} />
 				<Route path='/createrecipe' exact component={RecipeCreate} />
 				{/* <Route path='/about' exact component={About} /> */}

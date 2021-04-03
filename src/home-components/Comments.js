@@ -1,26 +1,36 @@
 import React from 'react';
 import axios from 'axios';
 import { Button, Carousel, Form, Jumbotron } from 'react-bootstrap';
+import { tokenState as tokenStateAtom } from '../landing-page-components/LandingCarousel';
+import { useRecoilState } from 'recoil';
 
 const Comments = (props) => {
+	const [token, setToken] = useRecoilState(tokenStateAtom);
 	console.log(props.details);
 	const recipeId = props.details._id;
 
+	console.log(token)
+
 	const mapComments = props.details.comments.map((comment) => {
+		// console.log(props.details.author.username);
 		return (
 			<div>
 				<p style={{ color: 'red' }}>{comment.post}</p>
+				<p>{comment.author}</p>
+				{/* <button>Delete Comment</button> */}
 			</div>
 		);
 	});
 
 	const post = () => {
-		axios.post(
-			`https://seefood-backend.herokuapp.com/${recipeId}/comments/create`,
-			{
-				post: 'TEST POST FROM REACT',
-			}
-		);
+		axios({
+			url: `https://seefood-backend.herokuapp.com/${recipeId}/comments/create`,
+			method: 'POST',
+			data: {post: "test"},
+			headers: {
+				Authorization: `Bearer ${token}`,
+			},
+		});
 	};
 
 	// 	axios({
