@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Button, Carousel, Form, Jumbotron } from 'react-bootstrap';
 import { tokenState as tokenStateAtom } from '../landing-page-components/LandingCarousel';
@@ -6,10 +6,13 @@ import { useRecoilState } from 'recoil';
 
 const Comments = (props) => {
 	const [token, setToken] = useRecoilState(tokenStateAtom);
-	console.log(props.details);
+	const [comment, setComment] = useState({
+		post: null
+	})
 	const recipeId = props.details._id;
-
-	console.log(token)
+	
+	// console.log(props.details);
+	// console.log(token);
 
 	const mapComments = props.details.comments.map((comment) => {
 		// console.log(props.details.author.username);
@@ -26,30 +29,25 @@ const Comments = (props) => {
 		axios({
 			url: `https://seefood-backend.herokuapp.com/${recipeId}/comments/create`,
 			method: 'POST',
-			data: {post: "test"},
+			data: comment,
 			headers: {
 				Authorization: `Bearer ${token}`,
 			},
-		});
+		})
 	};
 
-	// 	axios({
-	// 		url: `https://seefood-backend.herokuapp.com/recipes`,
-	// 		method: 'POST',
-	// 		data: recipe,
-	// 		headers: {
-	// 			Authorization: `Bearer ${token}`,
-	// 		},
-	// 	});
-	// };
-
-	// console.log(mapComments)
-
+	const handleComment = (event) => {
+		setComment({
+			post: event.target.value
+		})
+	}
+	console.log(comment)
+	
 	return (
 		<div>
 			<div className='commentContainer'>
 				<h3 className='commentBanner'>Add a Comment:</h3>
-				<input type='text' className='commentForm'></input>
+				<input type='text' className='commentForm' onChange={handleComment}></input>
 				<Button className='commentSubmitButton' variant='info' onClick={post}>
 					Submit
 				</Button>
