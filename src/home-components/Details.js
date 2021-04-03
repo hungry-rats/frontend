@@ -25,6 +25,8 @@ export default function Details({ match }) {
 	}, []);
 
 	console.log(details);
+	console.log(id)
+	// console.log(details.directions);
 
 	useEffect(() => {}, [details]);
 
