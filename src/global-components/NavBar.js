@@ -12,21 +12,40 @@ const NavBar = () => {
 			collapseOnSelect
 			variant='light'
 			expand='md'>
-			<Navbar.Brand className="grow" style={{ color: 'black' }} as={Link} to='/home'>
-				<b className="homeLink">Home</b>
+			<Navbar.Brand
+				className='grow'
+				style={{ color: 'black' }}
+				as={Link}
+				to='/home'>
+				<b className='homeLink'>Home</b>
 			</Navbar.Brand>
 			<Navbar.Toggle aria-controls='basic-navbar-nav' />
 			<Navbar.Collapse id='basic-navbar-nav'>
 				<Nav>
-					<Nav.Link className="grow" style={{ color: 'black' }} as={Link} to='/about'>
-						<b className="aboutLink">About</b>
+					<Nav.Link
+						className='grow'
+						style={{ color: 'black' }}
+						as={Link}
+						to='/about'>
+						<b className='aboutLink'>About</b>
 					</Nav.Link>
-					<Nav.Link className="grow" style={{ color: 'black' }} as={Link} to='/contact'>
-						<b className="contactLink">Contact</b>
+					<Nav.Link
+						className='grow'
+						style={{ color: 'black' }}
+						as={Link}
+						to='/contact'>
+						<b className='contactLink'>Contact</b>
 					</Nav.Link>
 				</Nav>
 
 				<Nav className='ml-auto'>
+					<Nav.Link
+						className='grow'
+						style={{ color: 'black' }}
+						as={Link}
+						to='/user'>
+						<b className='aboutLink'>User</b>
+					</Nav.Link>
 					<Nav.Link
 						className='github'
 						style={{ color: 'black' }}

@@ -24,8 +24,8 @@ export default function Details({ match }) {
 			.catch(console.error);
 	}, []);
 
-	console.log(details);
-	console.log(id)
+	// console.log(details);
+	// console.log(id)
 	// console.log(details.directions);
 
 	useEffect(() => {}, [details]);
