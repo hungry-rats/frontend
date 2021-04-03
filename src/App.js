@@ -47,7 +47,7 @@ function App() {
 		);
 	} else {
 		return (
-			<div>
+			<div className='App'>
 				{/* <NavBar /> */}
 
 				<Route path='/home' exact render={() => <Home />} />
