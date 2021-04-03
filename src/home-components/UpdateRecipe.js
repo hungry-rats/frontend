@@ -13,7 +13,7 @@ const UpdateRecipe = ({ match }) => {
 	const handleClose = () => setShow(false);
 	const handleShow = () => setShow(true);
 
-    console.log(match.params.id)
+    // console.log(match.params.id)
 
     function handleInput(event) {
 		// event.preventDefault();
