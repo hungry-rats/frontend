@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Button, Carousel, Form, Jumbotron } from 'react-bootstrap';
 
 const Comments = (props) => {
-	console.log(props.details.comments);
+	console.log(props.details);
 	const recipeId = props.details._id;
 
 	const mapComments = props.details.comments.map((comment) => {
@@ -16,7 +16,7 @@ const Comments = (props) => {
 
 	const post = () => {
 		axios.post(
-			`https://seefood-backend.herokuapp.com/60677e7057c9cb4beb4eff87/${recipeId}/comments/create`,
+			`https://seefood-backend.herokuapp.com/${recipeId}/comments/create`,
 			{
 				post: 'TEST POST FROM REACT',
 			}
@@ -40,7 +40,7 @@ const Comments = (props) => {
 			<div className='commentContainer'>
 				<h3 className='commentBanner'>Add a Comment:</h3>
 				<input type='text' className='commentForm'></input>
-				<Button className='commentSubmitButton' variant='info'>
+				<Button className='commentSubmitButton' variant='info' onClick={post}>
 					Submit
 				</Button>
 			</div>
