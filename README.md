@@ -1,70 +1,42 @@
-# Getting Started with Create React App
+# Welcome to Seefood!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Description - What did we cook up?
+We built this application as a platform for users to discover their new favorite recipe and share their culinary creations. Users can browse their feed, click on recipes that look tasty, and then add comments once they've given the recipe a try. This application can help users dodge the clutter and mess that's so ubiquitous on so many other recipe websites. Everyone reading this can probably relate to needing to scroll through several pages-worth of text just to arrive at a simple 4 step recipe!
 
-## Available Scripts
+## What Features did you bake in?
+Seefood demonstrates full CRUD functionality for recipes and CRD (no updates as of this version) functionality for comments.
 
-In the project directory, you can run:
+Seefood lets users post their original recipes, add relevant details (allergens that may be in the recipe, stating their inspiration, uploading the perfect picture) and comment on other recipes that catch their eye. Users must sign-up prior to use (requiring a username, password and email address) and are then able to post, edit, and delete their recipes. Comments can be posted and deleted, but not edited as of this time.
 
-### `npm start`
+##User Stories for this Application:
+In the process of developing this application, we drafted the following User Stories to guide our priorities and work process.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+As a user, I want to:
+- Interact with a clean and intuitive interface
+- Clearly understand the purpose of this app - what’s my reason for use?
+- When in need of assistance, be able to easily arrive / come across clean and to-the-point instructions for use.
+- Know from where foods foods are originating (i.e. be presented with pertinent information)
+- Know where ingredients are in the recipe along with allergy warnings
+- Have a seamless user experience; no lags, bugs, hiccups
+- Supposing the app has user authentication, I want to be able to seamlessly login in and access all relevant content
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Our preliminary wireframes for this project:
+The below wireframes shaped our development, and later, our design process. We built thse out using Google slides. While our final components differ from these wireframes, they served as guideposts for our development and are hereby included as a reflection of our thought-process early in this project.
 
-### `npm test`
+<img width="1009" alt="Screen Shot 2021-03-28 at 2 54 38 PM" src="https://user-images.githubusercontent.com/63027187/113522281-31897d00-956d-11eb-8242-f70860da949e.png">
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+<img width="983" alt="Screen Shot 2021-03-28 at 3 03 27 PM" src="https://user-images.githubusercontent.com/63027187/113522286-4403b680-956d-11eb-9f2f-579bbe060bf9.png">
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<img width="931" alt="Screen Shot 2021-03-28 at 3 11 15 PM" src="https://user-images.githubusercontent.com/63027187/113522291-49610100-956d-11eb-886a-30c1f8389fa9.png">
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Which technologies were used for this project?
+Seefood's front end was constructed using React.js. Several of our component were constructed using [React Bootstrap] (https://react-bootstrap.github.io/), namely our carousels (can be found on our landing page alongside a bootstrapped jumbotron component), buttons (can be found throughout the application) and card components (found on our main feed). The remainder of our app was constructed via React. At times we used styled components, but we otherwise created style sheets via CSS. React Router was used for construction of our application's navigation. All http requests are made using Axios. We thought using Axios was a smart choice due to automatically transformed our data into .json and additionally for its ease of use.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+##Installation Instructions (Follow this recipe!):
+After having forked and cloned our code to a directory on your machine, you should run the below code to ensure you have all neccessvary dependencies installed.
+```
+npm i axios bootstrap recoil cors
+```
+Wanna try this recipe out? Our Contribution Guidelines:
+We'd love for you to contribute to our recipe. Here you can find our [frontend] (https://github.com/hungry-rats/frontend) as well as our [backend] (https://github.com/hungry-rats/backend).
