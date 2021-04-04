@@ -14,6 +14,7 @@
 .welcomeBar{
     background-color: cadetblue;
     color:white;
+    /* width: 100vw; */
 }
 .carouselGrid {
     display: grid;
@@ -75,7 +76,7 @@ form {
 }
 
 .linkToFeed {
-    /* background-color: yellow; */
+    background: peachpuff !important;
     height: 80px;
     grid-column-start: 3;
     grid-row-start: 1;

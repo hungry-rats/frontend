@@ -8,7 +8,7 @@ import NavBar from '../global-components/NavBar';
 const About = () => {
     return (
         <div className="aboutContainer">
-            <NavBar />
+            {/* <NavBar /> */}
             <h1>Welcome to Seefood!</h1>
             <br></br>
             {/* <h2>We designed Seefood to be the tastiest app for discovering new and exciting recipes from all of your friends!</h2> */}
@@ -32,7 +32,6 @@ const About = () => {
                     
                     <h3 className="a2">Spread the love! When you aren't trying out a new recipe, submit your favorites to share with others.</h3>
                     <br></br>
-                    <h3 className="a3">YOLO 420</h3>
 
                 </div>
                 <div>

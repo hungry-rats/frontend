@@ -16,7 +16,8 @@ import About from './global-components/About';
 import Contact from './global-components/Contact';
 import RecipeCreate from './home-components/RecipeCreate';
 import User from './home-components/User'
-import updateRecipe from './home-components/UpdateRecipe'
+import UpdateRecipe from './home-components/UpdateRecipe'
+import UpdateComment from './home-components/UpdateComment'
 
 function App() {
 	const [token, setToken] = useRecoilState(tokenStateAtom);
@@ -48,13 +49,16 @@ function App() {
 	} else {
 		return (
 			<div className='App'>
-				{/* <NavBar /> */}
+				<NavBar />
 
+				<Route path='/about' exact component={About} />
+				<Route path='/contact' exact component={Contact} />
 				<Route path='/home' exact render={() => <Home />} />
 				<Route path='/user' exact render={() => <User />} />
 				<Route path='/recipes/:id' exact component={Details} />
 				<Route path='/createrecipe' exact component={RecipeCreate} />
-				<Route path='/update/:id' exact component={updateRecipe} />
+				<Route path='/update/:id' exact component={UpdateRecipe} />
+				<Route path='/update/comment/:recipeId/:id' exact component={UpdateComment} />
 			</div>
 		);
 	}

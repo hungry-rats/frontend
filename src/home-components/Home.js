@@ -54,8 +54,6 @@ export default function Home() {
 	if (data) {
 		return (
 			<div>
-				<NavBar />
-
 				<div className='Home'>
 					<div className='Search'>
 						<SearchBar />

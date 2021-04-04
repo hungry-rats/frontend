@@ -44,7 +44,6 @@ export default function Details({ match }) {
 
 		return (
 			<div>
-				<NavBar />
 				<div className='titleImageContainer'>
 					<h1 className='itemTitleBanner'>{details.title}</h1>
 					<h3 className='inspiration'> Inspired by {details.inspiredBy}</h3>
@@ -54,7 +53,7 @@ export default function Details({ match }) {
 							<Button variant='info'>Return to Feed</Button>
 						</Link>
 					</div>
-					<Button variant='info'>Post a Recipe</Button>
+					{/* <Button variant='info'>Post a Recipe</Button> */}
 				</div>
 				<div className='informationBody'>
 					<div className='ingredientList'>

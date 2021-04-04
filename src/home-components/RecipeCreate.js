@@ -5,6 +5,7 @@ import { tokenState as tokenStateAtom } from '../landing-page-components/Landing
 import { atom, useRecoilState, useRecoilValue } from 'recoil';
 import { Button, Form } from 'react-bootstrap';
 import './RecipeCreate.css';
+import { Link } from 'react-router-dom'
 
 const RecipeCreate = () => {
 	const [token, setToken] = useRecoilState(tokenStateAtom);
@@ -80,7 +81,7 @@ const RecipeCreate = () => {
 						style={{ height: '200px' }}
 					/>
 				</Form.Group>
-				<Button variant='primary' type='submit'>
+				<Button variant='primary' type='submit' /* as={Link} to='/home' */>
 					Submit
 				</Button>
 			</Form>

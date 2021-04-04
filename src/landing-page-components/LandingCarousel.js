@@ -292,9 +292,6 @@ export default function LandingCarousel() {
 							exciting recipes from all of your friends! Add your favorites and
 							spread the love!
 						</p>
-						<p>
-							<Button variant='info'>Visit my Feed</Button>
-						</p>
 					</Jumbotron>
 
 					<div className='signUpForm'>
@@ -351,70 +348,6 @@ export default function LandingCarousel() {
 			</div>
 
 			<div className='linkToFeed'>
-				<Jumbotron>
-					<h1>Welcome To Tasty</h1>
-					<p>
-						This is a simple hero unit, a simple jumbotron-style component for
-						calling extra attention to featured content or information.
-					</p>
-					<p>
-						<Button variant='info'>Visit my Feed</Button>
-					</p>
-				</Jumbotron>
-
-				<div className='signUpForm'>
-					<h2> Sign Up!</h2>
-					<Form>
-						<Form.Group
-							controlId='email'
-							className='emailFormField'
-							required
-							onChange={handleEmail}
-							value={setInputValue}
-							onSubmit={handleSubmit}>
-							<Form.Label>Email address</Form.Label>
-							<Form.Control type='email' placeholder='Enter email' />
-						</Form.Group>
-
-						<Form.Group
-							controlId='username'
-							className='usernameFormField'
-							required
-							onChange={handleUserName}
-							value={setInputValue}
-							onSubmit={handleSubmit}>
-							<Form.Label>Username</Form.Label>
-							<Form.Control type='password' placeholder='Username' />
-						</Form.Group>
-						<Form.Group
-							controlId='password'
-							className='passwordEntryFormField'
-							required
-							onChange={handlePassword}
-							value={setInputValue}
-							onSubmit={handleSubmit}>
-							<Form.Label>Password</Form.Label>
-							<Form.Control type='password' placeholder='Password' />
-						</Form.Group>
-						<Form.Group
-							controlId='passwordConfirm'
-							className='passwordConfirmFormField'
-							required
-							onChange={handlePasswordConfirm}
-							value={setInputValue}
-							onSubmit={handleSubmit}>
-							<Form.Label>Confirm Password</Form.Label>
-							<Form.Control type='password' placeholder='Confirm Password' r />
-						</Form.Group>
-					</Form>
-					<Button
-						variant='info'
-						type='submit'
-						className='submitFormButton'
-						onClick={comparePasswords}>
-						Submit
-					</Button>
-				</div>
 			</div>
 		</div>
 	);

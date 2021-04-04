@@ -11,7 +11,7 @@ import chickenLunch from './img/chickenLunch.jpg'
 const Contact = () => {
     return (
         <div className="contactContainer">
-            <NavBar />
+            {/* <NavBar /> */}
             <h2>Seefood was proudly cooked up for you by us four. 
                 <br></br> We may not be chefs, but we know how to grill up some code!  
                 <br></br>Feel free to reach out to us with any inquries or feedback.</h2>

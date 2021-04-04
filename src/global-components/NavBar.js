@@ -46,12 +46,6 @@ const NavBar = () => {
 						to='/user'>
 						<b className='aboutLink'>User</b>
 					</Nav.Link>
-					<Nav.Link
-						className='github'
-						style={{ color: 'black' }}
-						href='https://github.com/DylanDrechsel'>
-						<b>GitHub</b>
-					</Nav.Link>
 				</Nav>
 			</Navbar.Collapse>
 		</Navbar>
