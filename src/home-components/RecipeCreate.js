@@ -17,21 +17,26 @@ const RecipeCreate = () => {
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
-
 		const arrrecipe = recipe['directions'].split('.');
 		const tempData = { ...recipe };
-		tempData['directions'] = arrrecipe;
-		setUpdated(tempData.directions);
 
-		axios({
-			url: `https://seefood-backend.herokuapp.com/recipes`,
-			method: 'POST',
-			data: updated,
-			headers: {
-				Authorization: `Bearer ${token}`,
-			},
-		});
+		tempData['directions'] = arrrecipe;
+
+		setUpdated(tempData);
 	};
+
+	useEffect(() => {
+		if (updated.title !== null) {
+			axios({
+				url: `https://seefood-backend.herokuapp.com/recipes`,
+				method: 'POST',
+				data: updated,
+				headers: {
+					Authorization: `Bearer ${token}`,
+				},
+			});
+		}
+	}, [updated]);
 
 	function handleInput(event) {
 		const input = { ...recipe };
@@ -73,6 +78,7 @@ const RecipeCreate = () => {
 					Submit
 				</Button>
 			</Form>
+			{/* <button onClick={handleSubmit}></button> */}
 		</div>
 	);
 };
