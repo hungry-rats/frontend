@@ -12,7 +12,6 @@ export const tokenState = atom({
 });
 
 export default function LandingCarousel() {
-	//Establish State Here
 	const history = useHistory();
 	const [token, setToken] = useRecoilState(tokenState);
 	const [formData, setFormData] = useState({
@@ -21,31 +20,21 @@ export default function LandingCarousel() {
 		password: null,
 	});
 
-	// console.log(token)
-
-	// console.log(useRecoilState(userState))
-
-	// const [emailState, setEmailState] = useState()
-	// const [usernameState, setUsernameState] = useState()
-	// const [passwordState, setPasswordState] = useState()
 	const [passwordConfirmState, setPasswordConfirmState] = useState();
 
 	const [inputValue, setInputValue] = useState({});
 
-	//Declare Password Comparison Function Here
 	function comparePasswords() {
 		if (passwordConfirmState.passwordConfirm === formData.password) {
 			axios
 				.post(`https://seefood-backend.herokuapp.com/users/create`, formData)
 				.then(() => {
 					history.push('/');
-					console.log(history);
 				})
 				.catch(console.error);
 		} else alert('Yikes! Your Passwords Do Not Match!');
 	}
 
-	//Handle Change Here
 	function handleChange(event) {
 		setInputValue({
 			inputValue: event.target.value,
@@ -81,15 +70,10 @@ export default function LandingCarousel() {
 		});
 	}
 
-	//Handle Submit Here
 	function handleSubmit(event) {
 		event.preventDefault();
 		console.log(event.target);
 	}
-
-	// function onSubmit(event){
-
-	// }
 
 	return (
 		<div className='container'>
@@ -347,8 +331,7 @@ export default function LandingCarousel() {
 				</div>
 			</div>
 
-			<div className='linkToFeed'>
-			</div>
+			<div className='linkToFeed'></div>
 		</div>
 	);
 }

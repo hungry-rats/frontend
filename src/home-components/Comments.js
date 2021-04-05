@@ -3,31 +3,25 @@ import axios from 'axios';
 import { Button, Carousel, Form, Jumbotron } from 'react-bootstrap';
 import { tokenState as tokenStateAtom } from '../landing-page-components/LandingCarousel';
 import { useRecoilState } from 'recoil';
-import { Link } from 'react-router-dom'
-
+import { Link } from 'react-router-dom';
 
 const Comments = (props) => {
 	const [token, setToken] = useRecoilState(tokenStateAtom);
 	const [comment, setComment] = useState({
 		post: null,
 		recipeId: null,
-	})
-	const [recipeInfo, setRecipeInfo] = useState([])
+	});
+	const [recipeInfo, setRecipeInfo] = useState([]);
 	const recipeId = props.details._id;
-	let mapNewComments = []
-
-	console.log(props.details.comments)
+	let mapNewComments = [];
 
 	useEffect(() => {
 		setComment({
 			recipeId: recipeId,
-		})
-	}, [])
-	
-	// console.log(props.details);
-	// console.log(token);
+		});
+	}, []);
+
 	let mapComments = props.details.comments.map((comment) => {
-		// console.log(props.details.author.username);
 		return (
 			<div>
 				<p style={{ color: 'red' }}>{comment.post}</p>
@@ -38,7 +32,6 @@ const Comments = (props) => {
 	});
 
 	useEffect(() => {
-		console.log('hit')
 		let mapNewComments = recipeInfo.map((comment) => {
 			return (
 				<div>
@@ -47,9 +40,7 @@ const Comments = (props) => {
 				</div>
 			);
 		});
-		console.log(mapNewComments)
-		
-	}, [recipeInfo])
+	}, [recipeInfo]);
 
 	const post = () => {
 		axios({
@@ -64,32 +55,26 @@ const Comments = (props) => {
 	};
 
 	const update = () => {
-		// useEffect(() => {
-			axios({
-				url: `https://seefood-backend.herokuapp.com/${recipeId}/comments`,
-				method: 'GET',
-				headers: {
-					Authorization: `Bearer ${token}`,
-				},
+		axios({
+			url: `https://seefood-backend.herokuapp.com/${recipeId}/comments`,
+			method: 'GET',
+			headers: {
+				Authorization: `Bearer ${token}`,
+			},
+		})
+			.then((res) => {
+				setRecipeInfo(res.data);
 			})
-				.then((res) => {
-					setRecipeInfo(res.data);
-				})
-				.catch(console.error);
-		// }, [])
-	}
-
-	console.log(recipeInfo)
-	console.log(mapComments)
+			.catch(console.error);
+	};
 
 	const handleComment = (event) => {
 		setComment({
 			post: event.target.value,
-			recipeId: comment.recipeId
-		})
-	}
-	console.log(comment)
-	
+			recipeId: comment.recipeId,
+		});
+	};
+
 	return (
 		<div>
 			<div className='commentContainer'>
@@ -102,13 +87,11 @@ const Comments = (props) => {
 					className='commentSubmitButton'
 					variant='info'
 					onClick={() => {
-						post()
+						post();
 						setTimeout(() => {
-							update()
-						}, 1000)
-					}}
-					// onClick={update}
-					>
+							update();
+						}, 1000);
+					}}>
 					Submit
 				</Button>
 			</div>

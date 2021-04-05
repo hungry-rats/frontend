@@ -22,8 +22,6 @@ export default function Home() {
 	const [data, setData] = useState();
 	const [search, setSearch] = useRecoilState(searchState);
 
-	console.log(token);
-
 	const url = `https://seefood-backend.herokuapp.com/recipes/`;
 
 	useEffect(() => {}, [data]);
@@ -46,7 +44,6 @@ export default function Home() {
 				.then((res) => {
 					setData(res.data);
 				})
-				.then(() => console.log(data))
 				.catch(console.error);
 		}
 	}, [search]);
@@ -65,7 +62,6 @@ export default function Home() {
 						<Feed data={data} />
 					</div>
 					<div className='UserInput'>
-						{/* <RecipeCreate /> */}
 						<AddRecipe />
 					</div>
 				</div>

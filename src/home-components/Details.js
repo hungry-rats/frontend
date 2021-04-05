@@ -9,7 +9,6 @@ import Comments from './Comments';
 const axios = require('axios').default;
 
 export default function Details({ match }) {
-	// console.log(match.params);
 	const id = match.params.id;
 	const [details, setDetails] = useState();
 	const [isClicked, setIsClicked] = useState(false);
@@ -24,15 +23,9 @@ export default function Details({ match }) {
 			.catch(console.error);
 	}, []);
 
-	// console.log(details);
-	// console.log(id)
-	// console.log(details.directions);
-
 	useEffect(() => {}, [details]);
 
 	if (details) {
-		console.log(details);
-
 		const toggleClick = (index) => {
 			let mappedOut = details.directions.map((index) => {
 				return details.directions.index == index
