@@ -102,7 +102,7 @@ const User = () => {
     console.log(userRecipes);
 
 	return (
-		<div>
+		<div style={{ width: '100%', height: '100vh', /* overflow: 'hidden' */ }}>
             {/* <updateModal /> */}
 			<h1>{mapRecipes}</h1>
 			<h1>{mapComments}</h1>

@@ -16,6 +16,8 @@ const Comments = (props) => {
 	const recipeId = props.details._id;
 	let mapNewComments = []
 
+	console.log(props.details.comments)
+
 	useEffect(() => {
 		setComment({
 			recipeId: recipeId,
@@ -29,7 +31,8 @@ const Comments = (props) => {
 		return (
 			<div>
 				<p style={{ color: 'red' }}>{comment.post}</p>
-				<p>{comment.author}</p> 
+				<p>{comment.author}</p>
+				<p>{comment.timeOfPost}</p>
 			</div>
 		);
 	});
@@ -54,15 +57,16 @@ const Comments = (props) => {
 			method: 'POST',
 			data: comment,
 			headers: {
+				'content-type': 'application/json',
 				Authorization: `Bearer ${token}`,
 			},
-		})
+		});
 	};
 
 	const update = () => {
 		// useEffect(() => {
 			axios({
-				url: `https://seefood-backend.herokuapp.com/60689c00ffc3671a3eb5d67c/comments`,
+				url: `https://seefood-backend.herokuapp.com/${recipeId}/comments`,
 				method: 'GET',
 				headers: {
 					Authorization: `Bearer ${token}`,
@@ -76,6 +80,7 @@ const Comments = (props) => {
 	}
 
 	console.log(recipeInfo)
+	console.log(mapComments)
 
 	const handleComment = (event) => {
 		setComment({
