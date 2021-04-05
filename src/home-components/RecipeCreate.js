@@ -5,51 +5,39 @@ import { tokenState as tokenStateAtom } from '../landing-page-components/Landing
 import { atom, useRecoilState, useRecoilValue } from 'recoil';
 import { Button, Form } from 'react-bootstrap';
 import './RecipeCreate.css';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 const RecipeCreate = () => {
 	const [token, setToken] = useRecoilState(tokenStateAtom);
 	const [recipe, setRecipe] = useState({});
-
-	console.log(token);
+	const [updated, setUpdated] = useState({
+		title: null,
+		directions: [null],
+	});
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
 
+		const arrrecipe = recipe['directions'].split('.');
+		const tempData = { ...recipe };
+		tempData['directions'] = arrrecipe;
+		setUpdated(tempData.directions);
+
 		axios({
 			url: `https://seefood-backend.herokuapp.com/recipes`,
 			method: 'POST',
-			data: recipe,
+			data: updated,
 			headers: {
 				Authorization: `Bearer ${token}`,
 			},
 		});
 	};
 
-	// function handleInformation(event) {
-	// 	setRecipe({
-	// 		title: event.target.value,
-	// 		author: event.target.value,
-	// 		inspiredBy: event.target.value,
-	// 		allergies: event.target.value,
-	// 		image: event.target.value,
-	// 		ingredients: [event.target.value],
-	// 		directions: [event.target.value],
-	// 	});
-	// }
-
 	function handleInput(event) {
-		// event.preventDefault();
 		const input = { ...recipe };
 		input[event.target.id] = event.target.value;
 		setRecipe(input);
-		// console.log(event.target.id);
 	}
-
-	// function submittest() {
-	// 	event.preventDefault();
-	// 	console.log(recipe);
-	// }
 
 	return (
 		<div>
@@ -85,7 +73,6 @@ const RecipeCreate = () => {
 					Submit
 				</Button>
 			</Form>
-			{/* <button onClick={handleSubmit}></button> */}
 		</div>
 	);
 };

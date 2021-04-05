@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Card from './Card';
 
 export default function Feed({ data }) {
-	console.log(data);
-
 	if (!data) {
 		return (
 			<div>
@@ -14,7 +12,6 @@ export default function Feed({ data }) {
 		return (
 			<div>
 				{data.map((item) => {
-					// console.log(item);
 					return (
 						<div key={item._id}>
 							<Card item={item} />

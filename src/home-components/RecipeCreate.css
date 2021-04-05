@@ -2,6 +2,7 @@
 	display: grid;
 	grid-template-rows: 0.1fr 5fr;
 	grid-template-columns: 1fr;
+	margin: 100 px;
 }
 form {
 	display: grid;
@@ -27,7 +28,5 @@ form {
 	grid-template-rows: 1fr 1fr 1fr;
 	align-items: center;
 	width: 80%;
-	/* justify-items: center; */
-	/* grid-gap: */
 	justify-items: center;
 }

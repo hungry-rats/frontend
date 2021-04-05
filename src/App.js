@@ -15,14 +15,12 @@ import { tokenState as tokenStateAtom } from './landing-page-components/LandingC
 import About from './global-components/About';
 import Contact from './global-components/Contact';
 import RecipeCreate from './home-components/RecipeCreate';
-import User from './home-components/User'
-import UpdateRecipe from './home-components/UpdateRecipe'
-import UpdateComment from './home-components/UpdateComment'
+import User from './home-components/User';
+import UpdateRecipe from './home-components/UpdateRecipe';
+import UpdateComment from './home-components/UpdateComment';
 
 function App() {
 	const [token, setToken] = useRecoilState(tokenStateAtom);
-
-	console.log(token);
 
 	if (token === null) {
 		return (
@@ -31,19 +29,9 @@ function App() {
 
 				<Route path='/login' exact render={() => <Login />} />
 
-				<Route path='/home' exact render={() => <Home />} />
-
-				<Route path='/recipes/:id' exact component={Details} />
-
 				<Route path='/about' exact component={About} />
 
 				<Route path='/contact' exact component={Contact} />
-
-				<Route path='/createrecipe' exact component={RecipeCreate} />
-
-				{/* <LandingCarousel/> */}
-				{/* <NavBar /> */}
-				{/* turnary will go here LOGED IN OR NOT */}
 			</div>
 		);
 	} else {
@@ -58,7 +46,11 @@ function App() {
 				<Route path='/recipes/:id' exact component={Details} />
 				<Route path='/createrecipe' exact component={RecipeCreate} />
 				<Route path='/update/:id' exact component={UpdateRecipe} />
-				<Route path='/update/comment/:recipeId/:id' exact component={UpdateComment} />
+				<Route
+					path='/update/comment/:recipeId/:id'
+					exact
+					component={UpdateComment}
+				/>
 			</div>
 		);
 	}

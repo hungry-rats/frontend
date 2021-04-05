@@ -16,8 +16,6 @@ const Login = (props) => {
 		password: null,
 	});
 
-	console.log(token);
-
 	const handleClose = () => setShow(false);
 	const handleShow = () => setShow(true);
 
@@ -25,11 +23,9 @@ const Login = (props) => {
 		setShow(true);
 	}, []);
 
-	//Handle Submit Here
 	function handleSubmit(event) {
 		event.preventDefault();
 		loginFunction();
-		// console.log(event.target);
 	}
 
 	function handleUserName(event) {
@@ -53,16 +49,12 @@ const Login = (props) => {
 			data: userData,
 		})
 			.then(({ data }) => {
-				console.log(data);
 				setToken(data.token);
 			})
 			.then(() => {
 				history.push('/home');
 			});
 	};
-	console.log(token);
-
-	// console.log(props.token)
 
 	return (
 		<div onload={handleShow}>
