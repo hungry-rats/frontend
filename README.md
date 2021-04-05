@@ -36,7 +36,7 @@ Seefood's front end was constructed using React.js. Several of our component wer
 ##Installation Instructions (Follow this recipe!):
 After having forked and cloned our code to a directory on your machine, you should run the below code to ensure you have all neccessvary dependencies installed.
 ```
-npm i axios bootstrap recoil cors
+npm i
 ```
 Wanna try this recipe out? Our Contribution Guidelines:
 We'd love for you to contribute to our recipe. Here you can find our [frontend] (https://github.com/hungry-rats/frontend) as well as our [backend] (https://github.com/hungry-rats/backend).
